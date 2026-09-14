@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('hero-motion-ready');</script>
 <title>TAMU SEDS — Students for the Exploration and Development of Space</title>
 <meta name="description" content="TAMU SEDS connects students of all backgrounds with a passion for space exploration.">
 <link rel="stylesheet" href="css/style.css?v=107">
@@ -377,34 +378,72 @@ Astromaterials Research and Exploration Science (ARES) Division
 <script src="js/scroll-reveal.js?v=99"></script>
 <script>
 (function () {
-  // Aim each spinning acronym letter at the matching initial in the
-  // expanded phrase, using the positions produced by the current layout.
-  function updateHeroLetterTargets() {
+  var root = document.documentElement;
+
+  function showFinalPhrase() {
+    root.classList.remove('hero-motion-ready');
+  }
+
+  function startHeroLetterMotion() {
     var sourceLetters = document.querySelectorAll('.hero__acronym-letter');
     var finalLetters = document.querySelectorAll('.hero__letter');
-    if (sourceLetters.length !== 4 || finalLetters.length !== 4) return;
+    if (sourceLetters.length !== 4 || finalLetters.length !== 4 ||
+        typeof sourceLetters[0].animate !== 'function') {
+      showFinalPhrase();
+      return;
+    }
+
+    var sourceRects = Array.prototype.map.call(sourceLetters, function (letter) {
+      return letter.getBoundingClientRect();
+    });
+    var targetRects = Array.prototype.map.call(finalLetters, function (letter) {
+      return letter.getBoundingClientRect();
+    });
 
     sourceLetters.forEach(function (source, index) {
-      var start = source.getBoundingClientRect();
-      var target = finalLetters[index].getBoundingClientRect();
+      var start = sourceRects[index];
+      var target = targetRects[index];
       var startX = start.left + start.width / 2;
       var startY = start.top + start.height / 2;
       var targetX = target.left + target.width / 2;
       var targetY = target.top + target.height / 2;
+      var moveX = targetX - startX;
+      var moveY = targetY - startY;
 
-      source.style.setProperty('--hero-target-x', (targetX - startX) + 'px');
-      source.style.setProperty('--hero-target-y', (targetY - startY) + 'px');
+      var motion = source.animate([
+        {
+          opacity: 1,
+          transform: 'translate3d(0, 0, 0) rotate(0deg)'
+        },
+        {
+          opacity: 1,
+          transform: 'translate3d(' + moveX + 'px, ' + moveY + 'px, 0) rotate(360deg)'
+        }
+      ], {
+        duration: 1000,
+        delay: 500 + index * 150,
+        easing: 'cubic-bezier(0.42, 0, 0.18, 1)',
+        fill: 'forwards'
+      });
+
+      motion.addEventListener('finish', function () {
+        finalLetters[index].parentElement.classList.add('is-landed');
+        source.style.visibility = 'hidden';
+      });
     });
   }
 
-  function scheduleHeroLetterTargets() {
-    window.requestAnimationFrame(updateHeroLetterTargets);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    showFinalPhrase();
+    return;
   }
 
-  scheduleHeroLetterTargets();
-  window.addEventListener('resize', scheduleHeroLetterTargets, { passive: true });
   if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(scheduleHeroLetterTargets);
+    document.fonts.ready.then(function () {
+      window.requestAnimationFrame(startHeroLetterMotion);
+    }, showFinalPhrase);
+  } else {
+    window.requestAnimationFrame(startHeroLetterMotion);
   }
 })();
 </script>
