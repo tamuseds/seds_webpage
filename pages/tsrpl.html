@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEDS Lunabotics — TAMU SEDS</title>
+<meta name="description" content="TAMU SEDS Lunabotics Rover Team.">
+<link rel="stylesheet" href="../css/style.css?v=99">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
+</head>
+<body class="luna-page">
+
+<div class="bg-fixed">
+  <div class="bg-fixed__overlay"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <img class="site-logo" src="../assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <span class="site-title">TAMU SEDS</span>
+</header>
+
+<!-- ============ SIDEBAR ============ -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar" aria-hidden="true">
+  <div class="sidebar__top">
+    <span class="sidebar__brand">MENU</span>
+    <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul id="sidebar-links" class="sidebar__links"></ul>
+  <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="luna-hero">
+  <div class="container luna-hero__content">
+    <h1 class="luna-hero__title">
+      <span class="luna-hero__acronym-only">SEDS</span>
+      <span class="luna-hero__expanded">
+        <span class="luna-hero__word">Lunabotics</span>
+      </span>
+    </h1>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="luna-section-intro">
+  <div class="container">
+    <p>
+      Howdy! We are TAMU Lunabotics, a student team run by TAMU SEDS in collaboration with Aggies Create - designing, building, and testing lunar construction robots for the annual <a href = "https://www.nasa.gov/learning-resources/lunabotics-challenge/" target = "_blank">NASA Lunabotics</a> competition. Our mission is to develop the next generation of engineers by providing an intensive, hands-on experience centered around extraterrestrial robotics and NASA systems engineering principles, all while contributing to a sustainable human presence on the Moon. 
+ 
+    </p>
+    <a class="luna-apply-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSczNOcc4WSFDIwlOtzmZIrHhvReWPtytZi8Jhti2Lz6Bl1PMw/viewform" target="_blank" rel="noopener">Apply Here By September 9th</a>
+  </div>
+</section>
+
+<!-- ============ 2026-27 TEAM (4x2 hover-reveal grid) ============ -->
+<section class="luna-team">
+  <div class="container">
+    <h2 style="text-align:center;">2026&ndash;27 Team</h2>
+    <div class="luna-team__grid">
+       <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/nachiket.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Nachiket Gaikwad</p>
+          <p class="luna-team-card__year">Project Manager</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/rylee.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Rylee Hunt</p>
+          <p class="luna-team-card__year">Chief Engineer</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/James.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">James Collins</p>
+          <p class="luna-team-card__year">Mechanical Lead</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/adrian.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Adrian Vouras</p>
+          <p class="luna-team-card__year">Business Lead</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/julio.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Julio Zapata</p>
+          <p class="luna-team-card__year">Electrical Lead</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/amare.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Amare Momoh</p>
+          <p class="luna-team-card__year">Structural Lead</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/luke.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Luke Murphy</p>
+          <p class="luna-team-card__year">GNC Lead</p>
+        </div>
+      </div>
+      <div class="luna-team-card" tabindex="0">
+        <div class="luna-team-card__photo"><img src = "../images/lunaboticslead/aden.png"></div>
+        <div class="luna-team-card__overlay">
+          <p class="luna-team-card__role">Aden Mann</p>
+          <p class="luna-team-card__year">CDH Lead</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUBTEAMS (click to expand) ============ -->
+<section class="luna-subteams">
+  <div class="container">
+    <h2 style="text-align:center;">Subteams</h2>
+    <div class="luna-subteams__row">
+      <div class="luna-subteam">
+        <button class="luna-subteam__toggle" aria-expanded="false">
+          <span>Electrical</span>
+          <span class="luna-subteam__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <ul class="luna-subteam__list">
+          <li>Member name</li>
+        </ul>
+      </div>
+      <div class="luna-subteam">
+        <button class="luna-subteam__toggle" aria-expanded="false">
+          <span>Mechanical</span>
+          <span class="luna-subteam__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <ul class="luna-subteam__list">
+          <li>Member name</li>
+        </ul>
+      </div>
+      <div class="luna-subteam">
+        <button class="luna-subteam__toggle" aria-expanded="false">
+          <span>Structural</span>
+          <span class="luna-subteam__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <ul class="luna-subteam__list">
+          <li>Member name</li>
+        </ul>
+      </div>
+      <div class="luna-subteam">
+        <button class="luna-subteam__toggle" aria-expanded="false">
+          <span>CDH</span>
+          <span class="luna-subteam__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <ul class="luna-subteam__list">
+          <li>Member name</li>
+        </ul>
+      </div>
+      <div class="luna-subteam">
+        <button class="luna-subteam__toggle" aria-expanded="false">
+          <span>GNC</span>
+          <span class="luna-subteam__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <ul class="luna-subteam__list">
+          <li>Member name</li>
+        </ul>
+      </div>
+      <div class="luna-subteam">
+        <button class="luna-subteam__toggle" aria-expanded="false">
+          <span>Business</span>
+          <span class="luna-subteam__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </span>
+        </button>
+        <ul class="luna-subteam__list">
+          <li>Member name</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEAM STRUCTURE ============ -->
+<section class="luna-structure">
+  <div class="container">
+    <h2 style="text-align:center;">Team Structure</h2>
+    <p class="luna-structure__intro">
+      For this 2025-2026 competition cycle, the team will be composed of
+      roughly 38 students and is divided into 6 subteams:
+    </p>
+    <ul class="luna-structure__list">
+      <li><strong>Electrical:</strong> Responsible for all of the circuitry in the robot and supplying sufficient power to all electronics, including motors, sensors, and the onboard computer.</li>
+      <li><strong>Mechanical:</strong> Responsible for the robot's drivetrain and excavation subsystems.</li>
+      <li><strong>Structural:</strong> Responsible for chassis design, dust tolerance, and creating a modular design.</li>
+      <li><strong>Command and Data Handling (CDH):</strong> Manages the onboard computer, data processing, sensors, and communication between subsystems to ensure smooth operation and autonomy.</li>
+      <li><strong>Guidance, Navigation, and Control (GNC):</strong> Responsible for motion planning, localization, and controlling the drive system so the robot can autonomously navigate, dig, and dump regolith accurately.</li>
+      <li><strong>Business:</strong> Responsible for managing the budget, fundraising, team outreach, and planning socials. Business subteam members also have the option to shadow a technical subteam if they wish, providing the option for less experienced students to learn robotics skills in order to join a technical subteam in the next competition cycle. Note: Shadows are expected to prioritize business subteam work, and will be given technical work based on their performance.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ACCOMPLISHMENTS (slide in on scroll) ============ -->
+<section class="luna-accomplish">
+  <div class="container">
+    <div class="luna-accomplish__text reveal reveal--right">
+      <h2>Our Beginnings</h2>
+      <p>
+        When this team was founded in September 2024, we had to start from scratch, with zero prior funding or experience. And yet, in our first year, we raised over $12k, built a working robot, and submitted our NASA deliverables on schedule. Out of 68 initial applicants, we were one of 35 teams that made it to the on-site competition in Florida, where we managed to come back from a disappointing first run to place 21st overall. We were also recognized as winners of the Nova Award for Stellar Systems Engineering by a First-Year Team, and were among only 11 teams to successfully operate their robot autonomously.
+      </p>
+      <p>
+      </p>
+    </div>
+    <div class="luna-accomplish__media luna-accomplish__media--video reveal reveal--left">
+      <iframe
+        src="https://www.youtube.com/embed/Qg35Tpoc9dw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LUNABOTICS 2026 COMPETITION ============ -->
+<section class="luna-accomplish">
+  <div class="container">
+    <div class="luna-accomplish__text reveal reveal--right">
+      <h2>Lunabotics 2026 Competition</h2>
+      <p>Check out our recent performance in the NASA Lunabotics 2026 Competition!</p>
+    </div>
+    <div class="luna-accomplish__media luna-accomplish__media--video reveal reveal--left">
+      <iframe
+        src="https://www.youtube.com/embed/C2uAPizdDWk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<!-- Front face shows the logo (placeholder box until real logos are
+     added); back face shows the org name. The whole card is a link,
+     So clicking anywhere redirects to the org's site. -->
+<section class="partners">
+  <div class="container">
+    <h2 style="text-align:center;">Partners</h2>
+    <div class="partners__grid">
+
+      <a class="partner-flip" href="#">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <img src="../images/logos/sick.png" alt="SICK logo" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="partner-flip__back">
+            <p>SICK Sensor Intelligence</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-flip" href="#">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <img src="../images/logos/texas.png" alt="Texas logo" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="partner-flip__back">
+            <p>Texas Space Grant Consortium</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-flip" href="#">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <img src="../images/logos/sendcutsend.png" alt="SendCutSend logo" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="partner-flip__back">
+            <p>SendCutSend</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-flip" href="#">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <img src="../images/logos/lasr.png" alt="LASR logo" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="partner-flip__back">
+            <p>LASR Lab</p>
+          </div>
+        </div>
+      </a>
+
+      <a class="partner-flip" href="#">
+        <div class="partner-flip__inner">
+          <div class="partner-flip__front">
+            <img src="../images/logos/texasam.png" alt="Texas A&amp;M logo" style="max-width:100%;max-height:100%;object-fit:contain;">
+          </div>
+          <div class="partner-flip__back">
+            <p>Texas A&amp;M University</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ GALLERY (4x2, click to zoom) ============ -->
+<!--
+<section class="luna-gallery">
+  <div class="container">
+    <h2 style="text-align:center;">Gallery</h2>
+    <div class="luna-gallery__grid">
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 1">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 01</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 2">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 02</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 3">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 03</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 4">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 04</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 5">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 05</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 6">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 06</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 7">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 07</span>
+      </button>
+      <button class="luna-gallery__item" data-lightbox data-lightbox-alt="Gallery photo 8">
+        <span class="luna-gallery__img">Photo placeholder — Gallery 08</span>
+      </button>
+    </div>
+  </div>
+</section>
+-->
+<!-- ============ COLLAPSIBLE: JOIN ============ -->
+<section class="luna-support">
+  <div class="container">
+    <details class="luna-accordion">
+      <summary class="luna-accordion__summary">
+        Join
+        <span class="luna-accordion__chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="luna-accordion__body">
+        <p>
+          Applications are <strong>currently closed</strong> for TAMU
+          Lunabotics. <strong><em>Please check back next semester!</em></strong>.
+        </p>
+
+        <h3 class="luna-accordion__subheading">What We're Looking For</h3>
+
+        <p><span class="luna-accordion__label">Subteam Member</span> — Preferably, has experience and interest in the subteam's specialty areas. No experience is necessary for the business subteam, so we encourage more inexperienced applicants to start there.</p>
+        <p><span class="luna-accordion__label">Subteam Lead</span> — Must have experience and interest in the subteam's specialty areas. Preferably, has experience with systems engineering and leading teams.</p>
+        <p><span class="luna-accordion__label">Project Manager</span> — Must have experience with systems engineering, project management, and leadership. Preferably, has expertise in all of the relevant aspects of robotics.</p>
+
+        <h3 class="luna-accordion__subheading">Time Commitment</h3>
+
+        <p>We are holding weekly meetings for:</p>
+        <ul class="luna-accordion__list">
+          <li>Full Team (2 hours)</li>
+          <li>Each Subteam (1-2 hours)</li>
+          <li>Systems Engineering Group (1-2 hours) — Only for Project Manager, Chief Engineer, and Subteam Leads</li>
+        </ul>
+        <p>
+          Taking into account work to be done outside of meetings, we
+          estimate an average weekly time commitment of
+          <strong>5-10 hours</strong>. However, this is a flexible number and
+          can be adjusted according to individual / team needs. And of
+          course, as they say, you get out of it what you put into it!
+        </p>
+      </div>
+    </details>
+
+    <!-- ============ COLLAPSIBLE: SPONSOR US ============ -->
+    <details class="luna-accordion">
+      <summary class="luna-accordion__summary">
+        Sponsor Us
+        <span class="luna-accordion__chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="luna-accordion__body">
+        <p>
+          If you are interested in supporting TAMU Lunabotics, we would love
+          to hear from you! As a first year team, we do not have any
+          existing funding sources, and will need all the help we can get in
+          order to successfully execute our project.
+        </p>
+
+        <h3 class="luna-accordion__subheading">Ways to Support Us</h3>
+
+        <p><span class="luna-accordion__label">Financial Sponsorship</span> — Direct funding goes toward materials, manufacturing, competition travel, and registration fees for Lunabotics.</p>
+        <p><span class="luna-accordion__label">In-Kind Donations</span> — Have hardware, electronics, manufacturing capabilities, or lab access that could help the team? We'd love to talk.</p>
+        <p><span class="luna-accordion__label">Technical Mentorship</span> — If you have experience in robotics, systems engineering, or autonomous systems, we're always looking for outside guidance and review.</p>
+        <p><span class="luna-accordion__label">Spread the Word</span> — Sharing our team with your company, university, or network helps us build the connections a first-year team needs most.</p>
+
+        <p>
+          Simply reach out to
+          <a href="mailto:tamu.seds.cstat@gmail.com">tamu.seds.cstat@gmail.com</a>
+          and we would be happy to discuss further!
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <h2 class="footer__title">CONNECT WITH US</h2>
+    <div class="footer__socials">
+      <a class="social social--instagram" href="https://www.instagram.com/seds.tamu/" target = "_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM17.8 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+      </a>
+      <a class="social social--linkedin" href="linkedin.com/company/seds-tamu/" target = "_blank" aria-label = "LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.9-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>
+      </a>
+      <a class="social social--mail" href="mailto:tamu.seds.cstat@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.6 5.8L19.6 7H4.4zM4 8.4V17h16V8.4l-8 6.1-8-6.1z"/></svg>
+      </a>
+          <a class="social social--discord" href="https://discord.gg/DzKJucZeb" target="_blank" aria-label="Discord">
+        <svg viewBox="0 0 640 512"><path d="M524.5 69.8a1.5 1.5 0 0 0 -.8-.7A485.1 485.1 0 0 0 404.1 32a1.8 1.8 0 0 0 -1.9 .9 337.5 337.5 0 0 0 -14.9 30.6 447.8 447.8 0 0 0 -134.4 0 309.5 309.5 0 0 0 -15.1-30.6 1.9 1.9 0 0 0 -1.9-.9A483.7 483.7 0 0 0 116.1 69.1a1.7 1.7 0 0 0 -.8 .7C39.1 183.7 18.2 294.7 28.4 404.4a2 2 0 0 0 .8 1.4A487.7 487.7 0 0 0 176 479.9a1.9 1.9 0 0 0 2.1-.7A348.2 348.2 0 0 0 208.1 430.4a1.9 1.9 0 0 0 -1-2.6 321.2 321.2 0 0 1 -45.9-21.9 1.9 1.9 0 0 1 -.2-3.1c3.1-2.3 6.2-4.7 9.1-7.1a1.8 1.8 0 0 1 1.9-.3c96.2 43.9 200.4 43.9 295.5 0a1.8 1.8 0 0 1 1.9 .2c2.9 2.4 6 4.9 9.1 7.2a1.9 1.9 0 0 1 -.2 3.1 301.4 301.4 0 0 1 -45.9 21.8 1.9 1.9 0 0 0 -1 2.6 391.1 391.1 0 0 0 30 48.8 1.9 1.9 0 0 0 2.1 .7A486 486 0 0 0 610.7 405.7a1.9 1.9 0 0 0 .8-1.4C623.7 277.6 590.9 167.7 524.5 69.8zM222.5 337.6c-29 0-52.8-26.6-52.8-59.2S193.1 219.1 222.5 219.1c29.7 0 53.3 26.8 52.8 59.2C275.3 311 251.9 337.6 222.5 337.6zm195.4 0c-29 0-52.8-26.6-52.8-59.2S388.4 219.1 417.9 219.1c29.7 0 53.3 26.8 52.8 59.2C470.7 311 447.5 337.6 417.9 337.6z"/></svg>
+      </a>
+      <a class="social social--linktree" href="https://linktr.ee/tamuseds" target="_blank" aria-label="Linktree">
+        <svg viewBox="0 0 24 24"><path d="M3.9 12a5 5 0 0 1 5-5h4v2h-4a3 3 0 0 0 0 6h4v2h-4a5 5 0 0 1-5-5zm7-1h4a5 5 0 0 1 0 10h-4v-2h4a3 3 0 0 0 0-6h-4z"/></svg>
+      </a>
+</div>
+
+    <!-- No backend on a static site can run real SQL, so this posts to a
+         Google Apps Script Web App instead: it appends each signup as a
+         row in a Google Sheet (queryable later the same way discussed
+         for the member portal) AND automatically emails the submission
+         to tamu.seds.cstat@gmail.com. Swap SCRIPT_URL in the script
+         below once the Apps Script is deployed. -->
+    <div class="footer__embed footer__signup">
+      <h3 class="footer__signup-title">Stay in the loop</h3>
+      <p class="footer__signup-intro">Join our mailing list for updates on meetings and events.</p>
+      <form id="signup-form" class="footer__signup-form">
+        <input type="text" id="signup-name" name="name" placeholder="Name" autocomplete="name">
+        <input type="email" id="signup-email" name="email" placeholder="Email" autocomplete="email" required>
+        <button type="submit" class="btn footer__signup-submit">Sign Up</button>
+      </form>
+      <p id="signup-msg" class="footer__signup-msg"></p>
+    </div>
+
+    <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // TODO: replace with the deployed Apps Script Web App URL (see the
+  // backend code provided separately — deploy it, then paste the URL here).
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby462ku4jANsLWdQGISNx0H9Ivo2KtkcvIwj1sxBZyri3mw_w7CybmIM4q6Q8dri2DL/exec';
+
+  var form = document.getElementById('signup-form');
+  var msg = document.getElementById('signup-msg');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('signup-name').value.trim();
+    var email = document.getElementById('signup-email').value.trim();
+    var submitBtn = form.querySelector('.footer__signup-submit');
+
+    submitBtn.disabled = true;
+    msg.textContent = 'Sending...';
+
+    var body = new URLSearchParams({ name: name, email: email });
+
+    fetch(SCRIPT_URL, { method: 'POST', body: body })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.hidden = true;
+          msg.textContent = "Thanks — you're on the list!";
+        } else {
+          msg.textContent = data.error || 'Something went wrong. Please try again.';
+          submitBtn.disabled = false;
+        }
+      })
+      .catch(function () {
+        msg.textContent = 'Something went wrong. Please try again.';
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
+
+<script src="../js/nav-config.js?v=99"></script>
+<script src="../js/main.js?v=99"></script>
+<script src="../js/scroll-reveal.js?v=99"></script>
+<script src="../js/lightbox.js?v=99"></script>
+<script src="../js/subteam-toggle.js?v=99"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
