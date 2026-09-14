@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TAMU SEDS — Students for the Exploration and Development of Space</title>
 <meta name="description" content="TAMU SEDS connects students of all backgrounds with a passion for space exploration.">
-<link rel="stylesheet" href="css/style.css?v=104">
+<link rel="stylesheet" href="css/style.css?v=105">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body class="home-page">
@@ -375,6 +375,39 @@ Astromaterials Research and Exploration Science (ARES) Division
 <script src="js/main.js?v=99"></script>
 <script src="js/mission-timeline.js?v=99"></script>
 <script src="js/scroll-reveal.js?v=99"></script>
+<script>
+(function () {
+  // Aim each spinning acronym letter at the matching initial in the
+  // expanded phrase, using the positions produced by the current layout.
+  function updateHeroLetterTargets() {
+    var sourceLetters = document.querySelectorAll('.hero__acronym-letter');
+    var finalLetters = document.querySelectorAll('.hero__letter');
+    if (sourceLetters.length !== 4 || finalLetters.length !== 4) return;
+
+    sourceLetters.forEach(function (source, index) {
+      var start = source.getBoundingClientRect();
+      var target = finalLetters[index].getBoundingClientRect();
+      var startX = start.left + start.width / 2;
+      var startY = start.top + start.height / 2;
+      var targetX = target.left + target.width / 2;
+      var targetY = target.top + target.height / 2;
+
+      source.style.setProperty('--hero-target-x', (targetX - startX) + 'px');
+      source.style.setProperty('--hero-target-y', (targetY - startY) + 'px');
+    });
+  }
+
+  function scheduleHeroLetterTargets() {
+    window.requestAnimationFrame(updateHeroLetterTargets);
+  }
+
+  scheduleHeroLetterTargets();
+  window.addEventListener('resize', scheduleHeroLetterTargets, { passive: true });
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleHeroLetterTargets);
+  }
+})();
+</script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script>
 (function () {

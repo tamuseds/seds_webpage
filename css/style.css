@@ -386,7 +386,7 @@ body.sidebar-open .sidebar__item {
 .hero__acronym-letter {
   display: inline-block;
   transform-origin: center;
-  animation: heroAcronymLetterSpinOut 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: heroAcronymLetterSpinOut 1.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero__acronym-letter:nth-child(1) {
@@ -397,17 +397,17 @@ body.sidebar-open .sidebar__item {
 .hero__acronym-letter:nth-child(2) {
   --hero-spin-x: -0.2em;
   --hero-spin-y: 0.25em;
-  animation-delay: 0.68s;
+  animation-delay: 0.75s;
 }
 .hero__acronym-letter:nth-child(3) {
   --hero-spin-x: -0.3em;
   --hero-spin-y: 0.4em;
-  animation-delay: 0.76s;
+  animation-delay: 0.9s;
 }
 .hero__acronym-letter:nth-child(4) {
   --hero-spin-x: -0.4em;
   --hero-spin-y: 0.55em;
-  animation-delay: 0.84s;
+  animation-delay: 1.05s;
 }
 
 @keyframes heroAcronymLetterSpinOut {
@@ -417,11 +417,11 @@ body.sidebar-open .sidebar__item {
   }
   60% {
     opacity: 1;
-    transform: translate(var(--hero-spin-x), var(--hero-spin-y)) rotate(180deg) scale(1.05);
+    transform: translate(var(--hero-target-x, var(--hero-spin-x)), var(--hero-target-y, var(--hero-spin-y))) rotate(180deg) scale(1.05);
   }
   100% {
     opacity: 0;
-    transform: translate(var(--hero-spin-x), var(--hero-spin-y)) rotate(360deg) scale(0.75);
+    transform: translate(var(--hero-target-x, var(--hero-spin-x)), var(--hero-target-y, var(--hero-spin-y))) rotate(360deg) scale(0.75);
   }
 }
 
@@ -431,7 +431,7 @@ body.sidebar-open .sidebar__item {
   row-gap: 0.15em;
   column-gap: 0.35em;
   opacity: 0;
-  animation: heroExpandIn 0.7s ease forwards 1.05s;
+  animation: heroExpandIn 0.7s ease forwards 1.2s;
 }
 @keyframes heroExpandIn {
   to { opacity: 1; }
@@ -446,13 +446,13 @@ body.sidebar-open .sidebar__item {
   font-weight: 700;
   opacity: 0;
   transform-origin: center;
-  animation: heroFinalLetterSpinIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: heroFinalLetterSpinIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.hero__chunk:nth-child(1) .hero__letter { animation-delay: 1.12s; }
-.hero__chunk:nth-child(2) .hero__letter { animation-delay: 1.22s; }
-.hero__chunk:nth-child(3) .hero__letter { animation-delay: 1.32s; }
-.hero__chunk:nth-child(4) .hero__letter { animation-delay: 1.42s; }
+.hero__chunk:nth-child(1) .hero__letter { animation-delay: 1.4s; }
+.hero__chunk:nth-child(2) .hero__letter { animation-delay: 1.55s; }
+.hero__chunk:nth-child(3) .hero__letter { animation-delay: 1.7s; }
+.hero__chunk:nth-child(4) .hero__letter { animation-delay: 1.85s; }
 
 @keyframes heroFinalLetterSpinIn {
   from {
@@ -469,7 +469,7 @@ body.sidebar-open .sidebar__item {
   margin-left: 0.15em;
   opacity: 0;
   font-size: clamp(1.4rem, 4.2vw, 3rem);
-  animation: heroWordIn 1s ease forwards 1.6s;
+  animation: heroWordIn 1s ease forwards 1.9s;
 }
 @keyframes heroWordIn {
   to {
@@ -485,7 +485,7 @@ body.sidebar-open .sidebar__item {
 .hero__join-btn {
   display: inline-block;
   opacity: 0;
-  animation: heroBtnFadeIn 0.8s ease forwards 1.9s;
+  animation: heroBtnFadeIn 0.8s ease forwards 2.3s;
 }
 @keyframes heroBtnFadeIn {
   to { opacity: 1; }
@@ -536,16 +536,16 @@ body.sidebar-open .sidebar__item {
 @media (max-width: 720px) and (prefers-reduced-motion: no-preference) {
   .hero__expanded {
     opacity: 0;
-    animation: heroExpandIn 0.7s ease forwards 1.05s !important;
+    animation: heroExpandIn 0.7s ease forwards 1.2s !important;
   }
 
   .hero__rest {
     opacity: 0;
-    animation: heroWordIn 1s ease forwards 1.6s !important;
+    animation: heroWordIn 1s ease forwards 1.9s !important;
   }
 
   .hero__join-btn {
-    animation: heroBtnFadeIn 0.8s ease forwards 1.9s !important;
+    animation: heroBtnFadeIn 0.8s ease forwards 2.3s !important;
   }
 }
 
