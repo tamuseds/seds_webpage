@@ -386,7 +386,7 @@ body.sidebar-open .sidebar__item {
 .hero__acronym-letter {
   display: inline-block;
   transform-origin: center;
-  animation: heroAcronymLetterSpinOut 1.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: heroAcronymLetterSpinOut 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero__acronym-letter:nth-child(1) {
@@ -414,10 +414,6 @@ body.sidebar-open .sidebar__item {
   0% {
     opacity: 1;
     transform: translate(0, 0) rotate(0deg) scale(1);
-  }
-  60% {
-    opacity: 1;
-    transform: translate(var(--hero-target-x, var(--hero-spin-x)), var(--hero-target-y, var(--hero-spin-y))) rotate(180deg) scale(1.05);
   }
   100% {
     opacity: 0;
