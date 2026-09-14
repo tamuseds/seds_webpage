@@ -379,17 +379,22 @@ body.sidebar-open .sidebar__item {
   position: absolute;
   left: 0;
   top: 0;
-  animation:
-    heroSpread 1s ease forwards 0.6s,
-    heroFadeOut 0.7s ease forwards 1.6s;
+  animation: heroAcronymReveal 1.7s ease forwards 0.6s;
 }
 
-@keyframes heroSpread {
-  from { letter-spacing: 0; }
-  to   { letter-spacing: 0.35em; }
-}
-@keyframes heroFadeOut {
-  to { opacity: 0; }
+@keyframes heroAcronymReveal {
+  0% {
+    letter-spacing: 0;
+    opacity: 1;
+  }
+  58.8235% {
+    letter-spacing: 0.35em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.35em;
+    opacity: 0;
+  }
 }
 
 .hero__expanded {
@@ -478,9 +483,7 @@ body.sidebar-open .sidebar__item {
    animation makes it visible. */
 @media (max-width: 720px) and (prefers-reduced-motion: no-preference) {
   .hero__acronym-only {
-    animation:
-      heroSpread 1s ease forwards 0.6s,
-      heroFadeOut 0.7s ease forwards 1.6s !important;
+    animation: heroAcronymReveal 1.7s ease forwards 0.6s !important;
   }
 
   .hero__expanded {
@@ -1674,17 +1677,22 @@ body.sidebar-open .sidebar__item {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  animation:
-    solarSpread 1s ease forwards 0.6s,
-    solarFadeOut 0.7s ease forwards 1.6s;
+  animation: solarAcronymReveal 1.7s ease forwards 0.6s;
 }
 
-@keyframes solarSpread {
-  from { letter-spacing: 0.04em; }
-  to   { letter-spacing: 0.4em; }
-}
-@keyframes solarFadeOut {
-  to { opacity: 0; }
+@keyframes solarAcronymReveal {
+  0% {
+    letter-spacing: 0.04em;
+    opacity: 1;
+  }
+  58.8235% {
+    letter-spacing: 0.4em;
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.4em;
+    opacity: 0;
+  }
 }
 
 .solar-hero__expanded {
@@ -2258,9 +2266,7 @@ body.sidebar-open .sidebar__item {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  animation:
-    solarSpread 1s ease forwards 0.6s,
-    solarFadeOut 0.7s ease forwards 1.6s;
+  animation: solarAcronymReveal 1.7s ease forwards 0.6s;
 }
 
 .luna-hero__expanded {
@@ -2722,9 +2728,7 @@ body.lightbox-locked { overflow: hidden; }
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  animation:
-    solarSpread 1s ease forwards 0.6s,
-    solarFadeOut 0.7s ease forwards 1.6s;
+  animation: solarAcronymReveal 1.7s ease forwards 0.6s;
 }
 
 .join-hero__expanded {
@@ -2916,9 +2920,7 @@ body.lightbox-locked { overflow: hidden; }
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  animation:
-    solarSpread 1s ease forwards 0.6s,
-    solarFadeOut 0.7s ease forwards 1.6s;
+  animation: solarAcronymReveal 1.7s ease forwards 0.6s;
 }
 
 .snf-hero__expanded {
@@ -3362,9 +3364,7 @@ body.lightbox-locked { overflow: hidden; }
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  animation:
-    solarSpread 1s ease forwards 0.6s,
-    solarFadeOut 0.7s ease forwards 1.6s;
+  animation: solarAcronymReveal 1.7s ease forwards 0.6s;
 }
 
 .sac-hero__expanded {
@@ -3682,9 +3682,7 @@ body.lightbox-locked { overflow: hidden; }
   left: 50%;
   top: 0;
   transform: translateX(-50%);
-  animation:
-    solarSpread 1s ease forwards 0.6s,
-    solarFadeOut 0.7s ease forwards 1.6s;
+  animation: solarAcronymReveal 1.7s ease forwards 0.6s;
 }
 
 .portal-hero__expanded {
