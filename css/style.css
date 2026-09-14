@@ -5266,3 +5266,67 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
                 transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) !important;
   }
 }
+
+/* ============================================================
+   TSRPL PAGE (pages/tsrpl.html)
+   ------------------------------------------------------------
+   tsrpl.html is a copy of sedslunabotics.html and reuses all of
+   its .luna-* structure/classes. This block only re-themes the
+   accent color for this one page (light blue #bfeeff -> beige
+   #ecdcb3) and swaps in this page's own hero photo/title. Every
+   selector below is scoped under .tsrpl-page (an extra class
+   added alongside .luna-page on <body>), and declared after the
+   base .luna-page rules, so it overrides them here without
+   touching sedslunabotics.html or any other page.
+   ============================================================ */
+
+/* ---- Hero: swap in the launch photo, keep the same reveal
+   animation, but render the title in black instead of beige ---- */
+.tsrpl-hero {
+  background:
+    linear-gradient(180deg, rgba(20,18,14,0.15) 0%, rgba(20,18,14,0.35) 65%, rgba(0,0,0,0.55) 100%),
+    url('../assets/tsrpl-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tsrpl-page .luna-hero__title {
+  color: #000000;
+}
+
+/* Long full-name title needs a smaller size than the short
+   "Lunabotics" word this layout was originally sized for, so it
+   doesn't wrap awkwardly / dominate the hero. */
+.tsrpl-page .luna-hero__word {
+  font-size: clamp(1.3rem, 3.4vw, 2.2rem);
+  max-width: 90vw;
+}
+
+/* ---- Beige accent, everywhere the base page uses light blue ---- */
+.tsrpl-page.luna-page h2,
+.tsrpl-page .luna-team-card__role,
+.tsrpl-page .luna-accomplish__media,
+.tsrpl-page .luna-accordion__summary,
+.tsrpl-page .luna-accordion__subheading,
+.tsrpl-page .luna-accordion__list li::before,
+.tsrpl-page .luna-accordion__body a {
+  color: #ecdcb3;
+}
+
+.tsrpl-page .luna-accordion {
+  border-color: rgba(236, 220, 179, 0.35);
+}
+
+.tsrpl-page .luna-accordion__chevron {
+  border-right-color: #ecdcb3;
+  border-bottom-color: #ecdcb3;
+}
+
+.tsrpl-page .partner-flip__back {
+  border-color: #ecdcb3;
+}
+
+.tsrpl-page .luna-subteam {
+  background: #ecdcb3;
+}
