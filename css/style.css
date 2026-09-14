@@ -379,21 +379,49 @@ body.sidebar-open .sidebar__item {
   position: absolute;
   left: 0;
   top: 0;
-  animation: heroAcronymReveal 1.7s ease forwards 0.6s;
+  display: inline-flex;
+  gap: 0.08em;
 }
 
-@keyframes heroAcronymReveal {
+.hero__acronym-letter {
+  display: inline-block;
+  transform-origin: center;
+  animation: heroAcronymLetterSpinOut 0.95s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero__acronym-letter:nth-child(1) {
+  --hero-spin-x: -0.1em;
+  --hero-spin-y: 0.1em;
+  animation-delay: 0.6s;
+}
+.hero__acronym-letter:nth-child(2) {
+  --hero-spin-x: -0.2em;
+  --hero-spin-y: 0.25em;
+  animation-delay: 0.68s;
+}
+.hero__acronym-letter:nth-child(3) {
+  --hero-spin-x: -0.3em;
+  --hero-spin-y: 0.4em;
+  animation-delay: 0.76s;
+}
+.hero__acronym-letter:nth-child(4) {
+  --hero-spin-x: -0.4em;
+  --hero-spin-y: 0.55em;
+  animation-delay: 0.84s;
+}
+
+@keyframes heroAcronymLetterSpinOut {
   0% {
-    letter-spacing: 0;
     opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
   }
-  58.8235% {
-    letter-spacing: 0.35em;
+  60% {
     opacity: 1;
+    transform: translate(var(--hero-spin-x), var(--hero-spin-y)) rotate(180deg) scale(1.05);
   }
   100% {
-    letter-spacing: 0.35em;
     opacity: 0;
+    transform: translate(var(--hero-spin-x), var(--hero-spin-y)) rotate(360deg) scale(0.75);
   }
 }
 
@@ -403,7 +431,7 @@ body.sidebar-open .sidebar__item {
   row-gap: 0.15em;
   column-gap: 0.35em;
   opacity: 0;
-  animation: heroExpandIn 0.7s ease forwards 1.6s;
+  animation: heroExpandIn 0.7s ease forwards 1.05s;
 }
 @keyframes heroExpandIn {
   to { opacity: 1; }
@@ -416,6 +444,25 @@ body.sidebar-open .sidebar__item {
 
 .hero__letter {
   font-weight: 700;
+  opacity: 0;
+  transform-origin: center;
+  animation: heroFinalLetterSpinIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero__chunk:nth-child(1) .hero__letter { animation-delay: 1.12s; }
+.hero__chunk:nth-child(2) .hero__letter { animation-delay: 1.22s; }
+.hero__chunk:nth-child(3) .hero__letter { animation-delay: 1.32s; }
+.hero__chunk:nth-child(4) .hero__letter { animation-delay: 1.42s; }
+
+@keyframes heroFinalLetterSpinIn {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(180deg) scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0deg) scale(1);
+  }
 }
 
 .hero__rest {
@@ -455,10 +502,15 @@ body.sidebar-open .sidebar__item {
     position: absolute;
     left: 0;
     top: 0;
-    display: inline-block;
+    display: inline-flex;
     transform: none;
-    letter-spacing: 0.35em;
+    letter-spacing: normal;
   }
+
+  .hero__acronym-letter:nth-child(1) { --hero-spin-x: 0em; --hero-spin-y: 0.1em; }
+  .hero__acronym-letter:nth-child(2) { --hero-spin-x: -0.9em; --hero-spin-y: 1.25em; }
+  .hero__acronym-letter:nth-child(3) { --hero-spin-x: -1.8em; --hero-spin-y: 2.4em; }
+  .hero__acronym-letter:nth-child(4) { --hero-spin-x: -2.7em; --hero-spin-y: 3.55em; }
 
   .hero__expanded {
     display: inline-flex;
@@ -482,13 +534,9 @@ body.sidebar-open .sidebar__item {
    it must not hide this hero: its text starts transparent until the reveal
    animation makes it visible. */
 @media (max-width: 720px) and (prefers-reduced-motion: no-preference) {
-  .hero__acronym-only {
-    animation: heroAcronymReveal 1.7s ease forwards 0.6s !important;
-  }
-
   .hero__expanded {
     opacity: 0;
-    animation: heroExpandIn 0.7s ease forwards 1.6s !important;
+    animation: heroExpandIn 0.7s ease forwards 1.05s !important;
   }
 
   .hero__rest {
@@ -517,7 +565,9 @@ body.sidebar-open .sidebar__item {
 
 @media (prefers-reduced-motion: reduce) {
   .hero__acronym-only,
+  .hero__acronym-letter,
   .hero__expanded,
+  .hero__letter,
   .hero__rest,
   .hero__join-btn {
     animation: none !important;
@@ -5328,7 +5378,7 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
 }
 
 /* ============================================================
-   MOBILE: KEEP ONLY THE SLIDE-IN SCROLL REVEAL ANIMATION
+   MOBILE: KEEP SCROLL REVEALS AND THE HERO LETTER REVEAL
    ============================================================
    Applies to every page (one shared stylesheet). On small screens,
    hover-based effects (card flips, glows, lifts, chevron rotations,
@@ -5337,7 +5387,8 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
    these effects either never trigger correctly or can get visually
    "stuck" after a tap. The scroll-triggered slide-in reveal effect
    (.reveal / .reveal--left / .reveal--right / .reveal--fade) is
-   kept, since it's still meaningful on mobile scrolling.
+   kept, since it's still meaningful on mobile scrolling. The homepage hero
+   letter reveal is also kept so its acronym transition remains visible.
 
    Note: this also removes the smoothing on functional UI transitions
    (sidebar open/close, accordion expand/collapse, etc.) — those
@@ -5346,9 +5397,9 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
    ============================================================ */
 
 @media (max-width: 768px) {
-  *,
-  *::before,
-  *::after {
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn),
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn)::before,
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn)::after {
     transition: none !important;
     animation: none !important;
   }
