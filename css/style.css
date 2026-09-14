@@ -416,8 +416,8 @@ body.sidebar-open .sidebar__item {
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
   100% {
-    opacity: 0;
-    transform: translate(var(--hero-target-x, var(--hero-spin-x)), var(--hero-target-y, var(--hero-spin-y))) rotate(360deg) scale(0.75);
+    opacity: 1;
+    transform: translate(var(--hero-target-x, var(--hero-spin-x)), var(--hero-target-y, var(--hero-spin-y))) rotate(360deg) scale(1);
   }
 }
 
