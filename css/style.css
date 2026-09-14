@@ -4756,6 +4756,50 @@ body.lightbox-locked { overflow: hidden; }
   .proj-cards__grid { grid-template-columns: 1fr; max-width: 320px; }
 }
 
+/* On touch screens, project/event cards need a visible label before the
+   user interacts with them. A tap/focus gives the same inverted treatment
+   as the desktop hover state. */
+@media (max-width: 640px) {
+  .proj-card,
+  .proj-card:hover {
+    background: #000000;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+    transform: none;
+  }
+
+  .proj-card__icon,
+  .proj-card:hover .proj-card__icon {
+    color: var(--proj-color);
+  }
+
+  .proj-card__label,
+  .proj-card:hover .proj-card__label {
+    color: #ffffff;
+    opacity: 1;
+    transform: none;
+  }
+
+  .proj-card:active,
+  .proj-card:focus,
+  .proj-card:focus-visible {
+    background: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+    outline: none;
+  }
+
+  .proj-card:active .proj-card__icon,
+  .proj-card:focus .proj-card__icon,
+  .proj-card:focus-visible .proj-card__icon,
+  .proj-card:active .proj-card__label,
+  .proj-card:focus .proj-card__label,
+  .proj-card:focus-visible .proj-card__label {
+    color: #000000;
+  }
+}
+
 /* ============================================================
    HOME ACCORDION — Learn More / Support Us / Sponsor
    (white text, white borders — index.html only)
