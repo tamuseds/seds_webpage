@@ -5346,23 +5346,26 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
    touching sedslunabotics.html or any other page.
    ============================================================ */
 
-/* ---- Hero: swap in the launch photo, keep the same reveal
-   animation, but render the title in black instead of beige ---- */
+/* ---- Hero: swap in the launch-arc photo ----
+   This photo is almost pure black outside the exhaust trail, so
+   unlike the previous hero image we use `contain` (not `cover`) —
+   the whole arc stays visible with no cropping, and the black
+   letterbox bars it leaves blend invisibly into the page's own
+   black background. Title switches to white here: black text
+   (used for the old, much lighter sky photo) would be unreadable
+   against a background this dark. */
 .tsrpl-hero {
   background:
-    linear-gradient(180deg, rgba(20,18,14,0.15) 0%, rgba(20,18,14,0.35) 65%, rgba(0,0,0,0.55) 100%),
-    url('../assets/tsrpl-hero.png');
-  background-size: cover;
-  /* The rocket (incl. its nose cone) sits near the top of the source
-     photo. "center" cropped that off on tall viewports, so anchor the
-     crop to the top instead — any cropping now comes off the bottom
-     (empty sky/faint smoke), not the rocket itself. */
-  background-position: center top;
+    linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0.55) 100%),
+    url('../assets/tsrpl-hero-launch.jpg');
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
+  background-color: #000000;
 }
 
 .tsrpl-page .luna-hero__title {
-  color: #000000;
+  color: #ffffff;
 }
 
 /* Long full-name title needs a smaller size than the short
