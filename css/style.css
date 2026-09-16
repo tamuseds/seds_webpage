@@ -5353,7 +5353,11 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
     linear-gradient(180deg, rgba(20,18,14,0.15) 0%, rgba(20,18,14,0.35) 65%, rgba(0,0,0,0.55) 100%),
     url('../assets/tsrpl-hero.png');
   background-size: cover;
-  background-position: center;
+  /* The rocket (incl. its nose cone) sits near the top of the source
+     photo. "center" cropped that off on tall viewports, so anchor the
+     crop to the top instead — any cropping now comes off the bottom
+     (empty sky/faint smoke), not the rocket itself. */
+  background-position: center top;
   background-repeat: no-repeat;
 }
 
@@ -5395,4 +5399,15 @@ a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-st
 
 .tsrpl-page .luna-subteam {
   background: #ecdcb3;
+}
+
+/* Only 3 real gallery photos on this page (vs. the 4-col/8-photo
+   layout the base .luna-gallery grid was built for) — 3 columns
+   avoids leaving an empty slot. Scoped to the same range the base
+   rule uses (>980px) so it doesn't fight the existing 3/2/1-column
+   responsive breakpoints below that, which already suit 3 photos. */
+@media (min-width: 981px) {
+  .tsrpl-page .luna-gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
