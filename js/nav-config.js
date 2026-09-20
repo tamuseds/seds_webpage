@@ -48,8 +48,8 @@ const NAV_LINKS = [
     children: [
       { label: "Solar Sail", href: "/pages/sedssolarsail.html" },
       { label: "Lunabotics", href: "/pages/sedslunabotics.html" },
-      { label: "Design Teams", href: "/pages/design_teams.html" },
       { label: "Rocket Propulsion Lab", href: "/pages/tsrpl.html" },
+      { label: "Design Teams", href: "/pages/design_teams.html" },
     ],
   },
  // { label: "Member Portal", href: "/pages/memberportal.html" },
