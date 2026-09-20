@@ -2139,40 +2139,6 @@ html.hero-motion-ready .hero__chunk.is-landed .hero__rest {
   line-height: 1.2;
 }
 
-.officer-card__socials {
-  order: 3;
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.officer-card:hover .officer-card__socials,
-.officer-card:focus-within .officer-card__socials {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.officer-social {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-.officer-social:hover {
-  background: #FFD800;
-  color: #000;
-  transform: translateY(-2px);
-}
-.officer-social svg { width: 14px; height: 14px; fill: currentColor; }
-
 @media (max-width: 980px) {
   .officers-grid__rows { grid-template-columns: repeat(3, 1fr); }
 }
@@ -2181,10 +2147,6 @@ html.hero-motion-ready .hero__chunk.is-landed .hero__rest {
 }
 @media (max-width: 420px) {
   .officers-grid__rows { grid-template-columns: 1fr; max-width: 320px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .officer-card__socials { transition: none; opacity: 1; transform: none; }
 }
 
 /* ============================================================
@@ -5095,7 +5057,7 @@ body.lightbox-locked { overflow: hidden; }
    "clickable" and an underline would look like a design bug.
    ============================================================ */
 
-a:not(.btn):not(.social):not(.officer-social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.luna-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink):not(.donate-cta__btn) {
+a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card):not(.dt-card):not(.solar-apply-btn):not(.luna-apply-btn):not(.team-item__status):not(.sidebar__link):not(.sidebar__sublink):not(.donate-cta__btn) {
   text-decoration: underline;
   text-underline-offset: 2px;
 }

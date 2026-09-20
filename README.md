@@ -98,3 +98,19 @@ python3 -m http.server 8000
 ```
 
 then visit `http://localhost:8000`.
+
+## Converting images to JPG
+
+The project includes a small Pillow-based converter for HEIC/HEIF and other
+common image formats. Install the dependencies from `requirements.txt`, then
+pass the source folder to the converter:
+
+```bash
+python -m pip install -r requirements.txt
+python tools/heic_to_jpg.py /path/to/my-images
+```
+
+This creates `/path/to/my-images-jpg` beside the source folder. Existing JPG
+names are preserved when possible; if a name already exists, the converter
+adds a numeric suffix. To convert nested folders while preserving their
+structure, add `--recursive`. Use `--overwrite` to replace existing JPGs.
