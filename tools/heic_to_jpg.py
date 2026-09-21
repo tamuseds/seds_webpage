@@ -4,6 +4,7 @@
 Usage:
     python tools/heic_to_jpg.py /path/to/photos
     python tools/heic_to_jpg.py /path/to/photos --recursive
+    python tools/heic_to_jpg.py /path/to/photos --resolution 1200x1600
 """
 
 from __future__ import annotations
@@ -30,6 +31,7 @@ IMAGE_EXTENSIONS = {
     ".tiff",
     ".webp",
 }
+DEFAULT_RESOLUTION = (600, 800)
 
 
 def image_files(folder: Path, recursive: bool) -> Iterable[Path]:
@@ -50,7 +52,9 @@ def jpg_name(source: Path, output_folder: Path) -> Path:
     return candidate
 
 
-def convert_image(source: Path, destination: Path) -> None:
+def convert_image(
+    source: Path, destination: Path, resolution: tuple[int, int]
+) -> None:
     with Image.open(source) as image:
         image.load()
         if image.mode in {"RGBA", "LA"} or "transparency" in image.info:
@@ -62,10 +66,27 @@ def convert_image(source: Path, destination: Path) -> None:
             converted = ImageOps.exif_transpose(image).convert("RGB")
 
         try:
+            converted.thumbnail(resolution, Image.Resampling.LANCZOS)
             converted.save(destination, "JPEG", quality=95, optimize=True)
         finally:
             if converted is not image:
                 converted.close()
+
+
+def parse_resolution(value: str) -> tuple[int, int]:
+    try:
+        width_text, height_text = value.lower().split("x", 1)
+        width = int(width_text)
+        height = int(height_text)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "resolution must use WIDTHxHEIGHT format, such as 600x800"
+        ) from error
+
+    if width <= 0 or height <= 0:
+        raise argparse.ArgumentTypeError("resolution dimensions must be positive")
+
+    return width, height
 
 
 def parse_args() -> argparse.Namespace:
@@ -82,6 +103,13 @@ def parse_args() -> argparse.Namespace:
         "--overwrite",
         action="store_true",
         help="Replace matching JPG files already in the output folder",
+    )
+    parser.add_argument(
+        "--resolution",
+        type=parse_resolution,
+        default=DEFAULT_RESOLUTION,
+        metavar="WIDTHxHEIGHT",
+        help="Maximum output resolution, preserving aspect ratio (default: 600x800)",
     )
     return parser.parse_args()
 
@@ -110,7 +138,7 @@ def main() -> int:
             destination = jpg_name(source, destination_folder)
 
         try:
-            convert_image(source, destination)
+            convert_image(source, destination, args.resolution)
             converted_count += 1
             print(f"Converted: {source} -> {destination}")
         except Exception as error:  # Keep processing the remaining images.
