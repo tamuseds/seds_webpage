@@ -610,6 +610,12 @@ html.hero-motion-ready .hero__chunk.is-landed .hero__rest {
   margin: 0 auto;
 }
 
+/* Center two Fall cards at the same desktop width as the three Spring cards. */
+.board__grid.board__grid--fall {
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  max-width: 656px;
+}
+
 .board__card { text-align: center; }
 
 .board__photo-wrap {
