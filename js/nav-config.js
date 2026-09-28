@@ -40,6 +40,7 @@ const NAV_LINKS = [
       { label: "Join", href: "/pages/join.html" }
     ],
   },
+  { label: "Current Speakers", href: "/pages/currentspeakers.html" },
   { label: "Speakers", href: "/pages/speakers.html" },
   { label: "Space Networking Fair", href: "/pages/spacenetworkingfair.html" },
   { label: "Student Astronaut Corps", href: "/pages/studentastronautcorps.html" },

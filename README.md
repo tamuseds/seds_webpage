@@ -113,4 +113,7 @@ python tools/heic_to_jpg.py /path/to/my-images
 This creates `/path/to/my-images-jpg` beside the source folder. Existing JPG
 names are preserved when possible; if a name already exists, the converter
 adds a numeric suffix. To convert nested folders while preserving their
-structure, add `--recursive`. Use `--overwrite` to replace existing JPGs.
+structure, add `--recursive`. Images are resized to fit within `600x800`
+pixels by default while preserving their aspect ratio. Set a different
+maximum size with `--resolution WIDTHxHEIGHT`, for example
+`--resolution 1200x1600`. Use `--overwrite` to replace existing JPGs.
