@@ -618,6 +618,24 @@ html.hero-motion-ready .hero__chunk.is-landed .hero__rest {
 
 .board__card { text-align: center; }
 
+.board__grid--fall .board__name {
+  margin-bottom: 8px;
+}
+
+.board__event-info {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.board__event-info span {
+  white-space: nowrap;
+}
+
+.board__grid--fall .board__overlay p + p {
+  margin-top: 12px;
+}
+
 .board__photo-wrap {
   position: relative;
   width: 100%;
