@@ -1,0 +1,44 @@
+/* Reuse the speakers page hero and typography; the event has no portrait. */
+.guest-event .container {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 1000px;
+}
+
+.guest-event .mission-row__text h2 {
+  text-transform: none;
+  line-height: 1.4;
+}
+
+.guest-event .guest-event__rsvp {
+  margin: 28px 0 40px;
+}
+
+.guest-event__button {
+  border-color: #0a0a0a;
+  color: #0a0a0a;
+}
+
+.guest-event__button:hover,
+.guest-event__button:focus-visible {
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.guest-event__talk-title {
+  margin: 0 0 20px;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 0.03em;
+}
+
+.guest-event__highlights {
+  margin: 0;
+  padding-left: 1.25em;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.guest-event__highlights li + li {
+  margin-top: 12px;
+}
