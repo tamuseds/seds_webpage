@@ -1,0 +1,85 @@
+/* Reuse the speakers page hero and typography. */
+.guest-event .container {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 1000px;
+}
+
+.guest-event__figure {
+  margin: 0;
+  text-align: center;
+}
+
+.guest-event__portrait {
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.guest-event__caption {
+  margin-top: 28px;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+.guest-event__name {
+  display: block;
+  max-width: 490px;
+  margin: 0 auto;
+  font-size: min(3.75rem, calc(12vw - 8px));
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.guest-event__details {
+  display: flex;
+  justify-content: center;
+  gap: 0.4em;
+  margin-top: 12px;
+}
+
+.guest-event__details > span {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .guest-event__details {
+    flex-direction: column;
+    gap: 0.2em;
+  }
+
+  .guest-event__separator {
+    display: none;
+  }
+}
+
+.guest-event .guest-event__rsvp {
+  margin: 28px 0 40px;
+  text-align: center;
+}
+
+.guest-event .guest-event__talk-title {
+  margin: 0 0 20px;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 0.03em;
+  text-transform: none;
+}
+
+.guest-event__highlights {
+  margin: 0;
+  padding-left: 1.25em;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+.guest-event__highlights li + li {
+  margin-top: 12px;
+}

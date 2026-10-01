@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guest Event — SEDS Speaker Series — TAMU SEDS</title>
+<meta name="description" content="SEDS Speaker Series: Aim for the Moon with Gerry Griffin ’56 at Rudder Forum, 6–8 PM. RSVP now.">
+<link rel="stylesheet" href="../css/style1.css?v=109">
+<link rel="stylesheet" href="../css/guestspeakers1.css?v=5">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<noscript><style>.reveal{opacity:1!important;transform:none!important;} #intro-overlay{display:none!important;}</style></noscript>
+</head>
+<body class="mission-page guest-speakers-page">
+
+<!-- ============ OPENING TYPEWRITER INTRO ============ -->
+<!-- White screen, black typewriter-style quote, then fades to reveal the
+     page underneath. Pure CSS/JS, no dependency on anything else on the
+     page. Respects prefers-reduced-motion (skips the type-out, shows the
+     line, fades quickly) and fails safe with JS off (noscript rule above
+     hides it outright) or if anything throws (removed on a timeout). -->
+<div id="intro-overlay" class="intro-overlay" role="presentation" aria-hidden="true">
+  <p class="intro-overlay__quote">
+    <span id="intro-overlay-text" class="intro-overlay__text"></span><span class="intro-overlay__cursor" aria-hidden="true"></span>
+  </p>
+</div>
+
+<div class="bg-fixed">
+  <div class="bg-fixed__overlay"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+    <span class="nav-toggle__bar"></span>
+  </button>
+  <img class="site-logo" src="../assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <span class="site-title">TAMU SEDS</span>
+</header>
+
+<!-- ============ SIDEBAR ============ -->
+<div id="sidebar-overlay" class="sidebar-overlay"></div>
+<nav id="sidebar" class="sidebar" aria-hidden="true">
+  <div class="sidebar__top">
+    <span class="sidebar__brand">MENU</span>
+    <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul id="sidebar-links" class="sidebar__links"></ul>
+  <div class="sidebar__footer">TAMU SEDS &middot; Texas A&amp;M University</div>
+</nav>
+
+<!-- ============ PAGE INTRO ============ -->
+<main>
+<!-- Hero band is the actual flyer graphic (lunar surface + the Class of
+     '56 ring), cropped down to just that top band — the title is baked
+     into the image exactly as designed, so the <h1> below is a visually
+     hidden (but screen-reader and SEO visible) duplicate, not a second
+     visible headline. -->
+<section class="mission-hero">
+  <div class="container">
+    <h1 class="mission-hero__title sr-only">SEDS Speaker Series: Guest Event</h1>
+  </div>
+</section>
+
+
+<section class="mission-row mission-row--dark guest-event" aria-labelledby="guest-event-caption">
+  <div class="container">
+    <div class="mission-row__text">
+      <figure class="guest-event__figure">
+        <img class="guest-event__portrait" src="../images/guestspeakers/GGriffinImage.jpeg" alt="Portrait of Gerry Griffin" width="490" height="624">
+        <figcaption id="guest-event-caption" class="guest-event__caption">
+          <span class="guest-event__name">Gerry Griffin ’56</span>
+          <span class="guest-event__details">
+            <span>Rudder Forum</span>
+            <span class="guest-event__separator" aria-hidden="true">|</span>
+            <span>October 29th</span>
+            <span class="guest-event__separator" aria-hidden="true">|</span>
+            <span>6-8PM</span>
+          </span>
+        </figcaption>
+      </figure>
+      <p class="guest-event__rsvp">
+        <a class="btn btn--accent" href="https://forms.gle/6XfZq5EqXHj5TzvE8" target="_blank" rel="noopener">RSVP Here</a>
+      </p>
+      <h2 class="guest-event__talk-title">Aim for the Moon</h2>
+      <ul class="guest-event__highlights">
+        <li>Flight Director for Apollo 7-17</li>
+        <li>Had his Aggie Ring brought to the Moon and back</li>
+        <li>Lead Flight Director for Apollo 12, 15, and 17</li>
+        <li>On-duty for Apollo 11 and 3</li>
+        <li>Director of Johnson Space Center and Deputy Director of Kennedy Space Center</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFE TIMELINE (vertical scroll-reveal) ============ -->
+<!-- Reuses the site's existing scroll-reveal.js + .reveal/.reveal--left/
+     .reveal--right utility for the slide-in + fade-in on scroll — no new
+     JS needed for the animation itself, just these classes on each item.
+     Entries without a real photo yet use the same "photo placeholder"
+     convention as the project pages elsewhere on the site, so it's
+     obvious where to drop in a real archival image later rather than
+     quietly showing nothing. -->
+<section class="griffin-timeline">
+  <div class="container">
+    <h2 class="griffin-timeline__heading reveal reveal--fade">A Life Aimed at the Moon</h2>
+    <ol class="griffin-timeline__list">
+
+      <li class="griffin-timeline__item reveal reveal--left">
+        <span class="griffin-timeline__year">1952</span>
+        <figure class="griffin-timeline__media">
+          <span class="griffin-timeline__placeholder">Photo placeholder — add an archival photo</span>
+          <figcaption>Griffin arrives in College Station.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Arrives at Texas A&amp;M</h3>
+          <p>Griffin begins his studies at what was then the Agricultural and Mechanical College of Texas — the start of a path that would eventually run straight through Mission Control.</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item reveal reveal--right">
+        <span class="griffin-timeline__year">1956</span>
+        <figure class="griffin-timeline__media">
+          <span class="griffin-timeline__placeholder">Photo placeholder — add an archival photo</span>
+          <figcaption>Griffin's graduating class ring.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Graduates, Ring in Hand</h3>
+          <p>He graduates and receives his Aggie ring — the Class of '56 band that, more than a decade later, would travel farther from home than any ring before it.</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item reveal reveal--left">
+        <span class="griffin-timeline__year">1964</span>
+        <figure class="griffin-timeline__media">
+          <span class="griffin-timeline__placeholder">Photo placeholder — add an archival photo</span>
+          <figcaption>Houston's new Mission Control.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Joins NASA in Houston</h3>
+          <p>Griffin joins NASA's human spaceflight program just as the Gemini and Apollo programs are taking shape, training for a seat on the Flight Director's console.</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item reveal reveal--right">
+        <span class="griffin-timeline__year">Dec 1968</span>
+        <figure class="griffin-timeline__media">
+          <span class="griffin-timeline__placeholder">Photo placeholder — add an archival photo</span>
+          <figcaption>Earthrise, seen from lunar orbit.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Apollo 8</h3>
+          <p>Griffin is part of the Mission Control team for the first crewed flight to orbit the Moon — a Cold War answer, in his own words, to the shock of Sputnik a decade earlier.</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item griffin-timeline__item--featured reveal reveal--left">
+        <span class="griffin-timeline__year">Nov 1969</span>
+        <figure class="griffin-timeline__media griffin-timeline__media--featured">
+          <img src="../assets/griffin-ring.jpg" alt="Gerry Griffin's Texas A&amp;M Class of 1956 ring" loading="lazy">
+          <figcaption>The ring that rode to the Moon and back aboard Apollo 12.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Apollo 12 — Lightning, and a Ring Along for the Ride</h3>
+          <p>36 seconds after liftoff, lightning strikes the Saturn V and knocks out power to the capsule. As Flight Director, Griffin's team calls for an obscure switch to be flipped — "SCE to auxiliary" — and the mission presses on toward the Moon. Griffin's own Aggie ring rides along in the capsule, making it the only one known to have reached the lunar surface.</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item reveal reveal--right">
+        <span class="griffin-timeline__year">Apr 1970</span>
+        <figure class="griffin-timeline__media">
+          <span class="griffin-timeline__placeholder">Photo placeholder — add an archival photo</span>
+          <figcaption>Mission Control, Apollo 13.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Apollo 13</h3>
+          <p>An oxygen tank ruptures en route to the Moon, turning a landing mission into a rescue. Griffin's shift helps plan the free-return trajectory that brings the crew home safely — NASA's best-known "successful failure."</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item reveal reveal--left">
+        <span class="griffin-timeline__year">Dec 1972</span>
+        <figure class="griffin-timeline__media">
+          <span class="griffin-timeline__placeholder">Photo placeholder — add an archival photo</span>
+          <figcaption>Apollo 17, the last crewed Moon landing.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>Apollo 17</h3>
+          <p>As Lead Flight Director for the final Apollo mission, Griffin arranges for a recording of the Aggie War Hymn to be beamed up as a wake-up call to the crew on the lunar surface — a bit of Aggie pride, 240,000 miles from Kyle Field.</p>
+        </div>
+      </li>
+
+      <li class="griffin-timeline__item griffin-timeline__item--featured reveal reveal--right">
+        <span class="griffin-timeline__year">Today</span>
+        <figure class="griffin-timeline__media griffin-timeline__media--featured">
+          <img src="../assets/griffin-ring.jpg" alt="Gerry Griffin's Texas A&amp;M Class of 1956 ring, now on display" loading="lazy">
+          <figcaption>On display at the Zachry Engineering Education Complex.</figcaption>
+        </figure>
+        <div class="griffin-timeline__text">
+          <h3>A Lasting Legacy</h3>
+          <p>Griffin goes on to direct Johnson Space Center and serve as deputy director of Kennedy Space Center. His ring now sits on permanent display at the Zachry Engineering Education Complex, alongside a simple question for every Aggie who walks by: where will your ring take you?</p>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <h2 class="footer__title">CONNECT WITH US</h2>
+    <div class="footer__socials">
+      <a class="social social--instagram" href="https://www.instagram.com/seds.tamu/" target = "_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM17.8 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+      </a>
+      <a class="social social--linkedin" href="https://www.linkedin.com/company/seds-tamu/" target = "_blank" aria-label = "LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.9-2 3.9-2 4.1 0 4.9 2.7 4.9 6.2V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></svg>
+      </a>
+      <a class="social social--mail" href="mailto:tamu.seds.cstat@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1.4 2 7.6 5.8L19.6 7H4.4zM4 8.4V17h16V8.4l-8 6.1-8-6.1z"/></svg>
+      </a>
+          <a class="social social--discord" href="https://discord.gg/DzKJucZeb" target="_blank" aria-label="Discord">
+        <svg viewBox="0 0 640 512"><path d="M524.5 69.8a1.5 1.5 0 0 0 -.8-.7A485.1 485.1 0 0 0 404.1 32a1.8 1.8 0 0 0 -1.9 .9 337.5 337.5 0 0 0 -14.9 30.6 447.8 447.8 0 0 0 -134.4 0 309.5 309.5 0 0 0 -15.1-30.6 1.9 1.9 0 0 0 -1.9-.9A483.7 483.7 0 0 0 116.1 69.1a1.7 1.7 0 0 0 -.8 .7C39.1 183.7 18.2 294.7 28.4 404.4a2 2 0 0 0 .8 1.4A487.7 487.7 0 0 0 176 479.9a1.9 1.9 0 0 0 2.1-.7A348.2 348.2 0 0 0 208.1 430.4a1.9 1.9 0 0 0 -1-2.6 321.2 321.2 0 0 1 -45.9-21.9 1.9 1.9 0 0 1 -.2-3.1c3.1-2.3 6.2-4.7 9.1-7.1a1.8 1.8 0 0 1 1.9-.3c96.2 43.9 200.4 43.9 295.5 0a1.8 1.8 0 0 1 1.9 .2c2.9 2.4 6 4.9 9.1 7.2a1.9 1.9 0 0 1 -.2 3.1 301.4 301.4 0 0 1 -45.9 21.8 1.9 1.9 0 0 0 -1 2.6 391.1 391.1 0 0 0 30 48.8 1.9 1.9 0 0 0 2.1 .7A486 486 0 0 0 610.7 405.7a1.9 1.9 0 0 0 .8-1.4C623.7 277.6 590.9 167.7 524.5 69.8zM222.5 337.6c-29 0-52.8-26.6-52.8-59.2S193.1 219.1 222.5 219.1c29.7 0 53.3 26.8 52.8 59.2C275.3 311 251.9 337.6 222.5 337.6zm195.4 0c-29 0-52.8-26.6-52.8-59.2S388.4 219.1 417.9 219.1c29.7 0 53.3 26.8 52.8 59.2C470.7 311 447.5 337.6 417.9 337.6z"/></svg>
+      </a>
+      <a class="social social--linktree" href="https://linktr.ee/tamuseds" target="_blank" aria-label="Linktree">
+        <svg viewBox="0 0 24 24"><path d="M3.9 12a5 5 0 0 1 5-5h4v2h-4a3 3 0 0 0 0 6h4v2h-4a5 5 0 0 1-5-5zm7-1h4a5 5 0 0 1 0 10h-4v-2h4a3 3 0 0 0 0-6h-4z"/></svg>
+      </a>
+</div>
+
+    <!-- No backend on a static site can run real SQL, so this posts to a
+         Google Apps Script Web App instead: it appends each signup as a
+         row in a Google Sheet (queryable later the same way discussed
+         for the member portal) AND automatically emails the submission
+         to tamu.seds.cstat@gmail.com. Swap SCRIPT_URL in the script
+         below once the Apps Script is deployed. -->
+    <div class="footer__embed footer__signup">
+      <h3 class="footer__signup-title">Stay in the loop</h3>
+      <p class="footer__signup-intro">Join our mailing list for updates on meetings and events.</p>
+      <form id="signup-form" class="footer__signup-form">
+        <input type="text" id="signup-name" name="name" placeholder="Name" autocomplete="name">
+        <input type="email" id="signup-email" name="email" placeholder="Email" autocomplete="email" required>
+        <button type="submit" class="btn footer__signup-submit">Sign Up</button>
+      </form>
+      <p id="signup-msg" class="footer__signup-msg"></p>
+    </div>
+
+    <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ---- Opening typewriter intro ----
+  // White screen -> black typewriter-style quote -> fades out to reveal
+  // the page. Runs once per page load (not stored/skipped on repeat
+  // visits — it's short and this is a one-off event page, not something
+  // a returning visitor needs to sit through on every single load of
+  // the whole site).
+  var overlay = document.getElementById('intro-overlay');
+  var textEl = document.getElementById('intro-overlay-text');
+  if (!overlay || !textEl) return;
+
+  var QUOTE = "I knew deep-down, right then that I was going into the space business.";
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function fadeOutOverlay() {
+    overlay.classList.add('intro-overlay--hidden');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('intro-overlay-active');
+    // Fully detach after the CSS fade finishes so it can't catch clicks.
+    window.setTimeout(function () {
+      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+    }, 1000);
+  }
+
+  // Safety net: whatever happens, never leave the visitor stuck looking
+  // at a blank white screen.
+  var safety = window.setTimeout(fadeOutOverlay, 6000);
+
+  if (reduceMotion) {
+    textEl.textContent = QUOTE;
+    window.setTimeout(function () {
+      window.clearTimeout(safety);
+      fadeOutOverlay();
+    }, 700);
+    return;
+  }
+
+  document.body.classList.add('intro-overlay-active');
+
+  var i = 0;
+  var typeSpeed = 38; // ms per character
+
+  function typeNext() {
+    if (i <= QUOTE.length) {
+      textEl.textContent = QUOTE.slice(0, i);
+      i++;
+      window.setTimeout(typeNext, typeSpeed);
+    } else {
+      window.setTimeout(function () {
+        window.clearTimeout(safety);
+        fadeOutOverlay();
+      }, 900);
+    }
+  }
+
+  window.setTimeout(typeNext, 250);
+})();
+</script>
+
+<script>
+(function () {
+  // TODO: replace with the deployed Apps Script Web App URL (see the
+  // backend code provided separately — deploy it, then paste the URL here).
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby462ku4jANsLWdQGISNx0H9Ivo2KtkcvIwj1sxBZyri3mw_w7CybmIM4q6Q8dri2DL/exec';
+
+  var form = document.getElementById('signup-form');
+  var msg = document.getElementById('signup-msg');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var name = document.getElementById('signup-name').value.trim();
+    var email = document.getElementById('signup-email').value.trim();
+    var submitBtn = form.querySelector('.footer__signup-submit');
+
+    submitBtn.disabled = true;
+    msg.textContent = 'Sending...';
+
+    var body = new URLSearchParams({ name: name, email: email });
+
+    fetch(SCRIPT_URL, { method: 'POST', body: body })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.hidden = true;
+          msg.textContent = "Thanks — you're on the list!";
+        } else {
+          msg.textContent = data.error || 'Something went wrong. Please try again.';
+          submitBtn.disabled = false;
+        }
+      })
+      .catch(function () {
+        msg.textContent = 'Something went wrong. Please try again.';
+        submitBtn.disabled = false;
+      });
+  });
+})();
+</script>
+<script src="../js/nav-config.js?v=109"></script>
+<script src="../js/main.js?v=109"></script>
+<script src="../js/scroll-reveal.js?v=109"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
