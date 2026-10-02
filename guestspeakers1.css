@@ -83,3 +83,109 @@
 .guest-event__highlights li + li {
   margin-top: 12px;
 }
+
+/* ---- Drifting starfield behind the dark sections ---- */
+/* Pure CSS — two tiled layers of small white radial-gradient dots, each
+   layer slowly panning on its own loop and softly twinkling via opacity.
+   No canvas/JS needed. Scoped to the page's black sections only (the bio
+   row, the timeline, and the footer) so it never sits behind light text
+   or the hero flyer image. Content inside each section gets z-index:1 so
+   it always stays above the stars. */
+.guest-speakers-page .mission-row--dark,
+.guest-speakers-page .griffin-timeline,
+.guest-speakers-page .site-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.guest-speakers-page .mission-row--dark > .container,
+.guest-speakers-page .griffin-timeline > .container,
+.guest-speakers-page .site-footer > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.guest-speakers-page .mission-row--dark::before,
+.guest-speakers-page .mission-row--dark::after,
+.guest-speakers-page .griffin-timeline::before,
+.guest-speakers-page .griffin-timeline::after,
+.guest-speakers-page .site-footer::before,
+.guest-speakers-page .site-footer::after {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: repeat;
+}
+
+/* Far layer: smaller, dimmer, denser, slow drift */
+.guest-speakers-page .mission-row--dark::before,
+.guest-speakers-page .griffin-timeline::before,
+.guest-speakers-page .site-footer::before {
+  background-image:
+    radial-gradient(1px 1px at 7% 18%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 19% 63%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 33% 24%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 46% 81%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 58% 12%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 68% 55%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 77% 37%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 88% 71%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 95% 9%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 12% 92%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 41% 45%, #fff, transparent 60%),
+    radial-gradient(1px 1px at 63% 88%, #fff, transparent 60%);
+  background-size: 180px 180px;
+  opacity: 0.35;
+  animation: starDriftFar 90s linear infinite, starTwinkleFar 5s ease-in-out infinite alternate;
+}
+
+/* Near layer: slightly bigger, brighter, sparser, faster drift */
+.guest-speakers-page .mission-row--dark::after,
+.guest-speakers-page .griffin-timeline::after,
+.guest-speakers-page .site-footer::after {
+  background-image:
+    radial-gradient(1.6px 1.6px at 15% 30%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 38% 70%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 54% 15%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 72% 50%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 85% 85%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 93% 25%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 25% 90%, #fff, transparent 70%),
+    radial-gradient(1.6px 1.6px at 5% 60%, #fff, transparent 70%);
+  background-size: 260px 260px;
+  opacity: 0.55;
+  animation: starDriftNear 55s linear infinite, starTwinkleNear 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes starDriftFar {
+  from { background-position: 0 0; }
+  to   { background-position: -180px 120px; }
+}
+
+@keyframes starDriftNear {
+  from { background-position: 0 0; }
+  to   { background-position: 160px -200px; }
+}
+
+@keyframes starTwinkleFar {
+  from { opacity: 0.2; }
+  to   { opacity: 0.4; }
+}
+
+@keyframes starTwinkleNear {
+  from { opacity: 0.4; }
+  to   { opacity: 0.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .guest-speakers-page .mission-row--dark::before,
+  .guest-speakers-page .mission-row--dark::after,
+  .guest-speakers-page .griffin-timeline::before,
+  .guest-speakers-page .griffin-timeline::after,
+  .guest-speakers-page .site-footer::before,
+  .guest-speakers-page .site-footer::after {
+    animation: none;
+  }
+}
