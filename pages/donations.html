@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Donations — TAMU SEDS</title>
+<title>Sponsorships — TAMU SEDS</title>
 <link rel="stylesheet" href="../css/style.css?v=107">
+<link rel="stylesheet" href="../css/sponsor-scroll.css?v=1">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 </head>
 <body style="background:#000000;">
@@ -37,9 +38,29 @@
     <div class="donate-hero__text">
       <h1 class="donate-hero__heading">Donate Today</h1>
       <p class="donate-hero__desc">
-        Your donation helps us to accomplish our mission statement. To educate students about space, provide experience to take their passions and apply them to real-life engineering projects, and integrate their education and experience with group trips and speaker events. and much more. Donate to help our organization run to fund project teams, Student Astronaut Corps, trips, and much more! For questions or inquiries, contact our team at <a href="mailto:tamu.seds.cstat@gmail.com"><u>tamu.seds.cstat@gmail.com</u></a>
+        Your donation helps us to accomplish our mission statement.
+        To educate students about space,
+        provide experience to take their passions
+        and apply them to real-life engineering projects,
+        and integrate their education and
+        experience with group trips and speaker events, and much more.
+        Donate to help our organization run to fund project teams,
+        Student Astronaut Corps, trips, and much more!
+        For questions or inquiries, contact our team at
+        <a href="mailto:tamu.seds.cstat@gmail.com"><u>tamu.seds.cstat@gmail.com</u></a>
       </p>
     </div>
+  </div>
+</section>
+
+<!-- ============ SPONSOR SCROLL ============ -->
+<section class="sponsor-scroll" aria-labelledby="sponsor-heading" hidden>
+  <div class="container sponsor-scroll__header">
+    <h2 id="sponsor-heading">Our Sponsors</h2>
+    <button class="sponsor-scroll__pause" type="button" aria-pressed="false">Pause logos</button>
+  </div>
+  <div class="sponsor-scroll__viewport">
+    <div id="sponsor-scroll-track" class="sponsor-scroll__track"></div>
   </div>
 </section>
 
@@ -97,6 +118,8 @@
 
 <script src="../js/nav-config.js?v=99"></script>
 <script src="../js/main.js?v=99"></script>
+<script src="../images/sponsorlogos/logos.js?v=1"></script>
+<script src="../js/sponsor-scroll.js?v=1"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <script>
 (function () {
