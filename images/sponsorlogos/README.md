@@ -22,9 +22,9 @@ contents on its own, so `logos.js` supplies filenames without needing a backend.
 
 Use sponsor names as filenames (for example, `Acme-Aerospace.svg`); filenames
 become accessible image descriptions. Logos display alphabetically, retain their
-aspect ratios, and sit on white cards so dark logos stay visible.
+aspect ratios, and have transparent card backgrounds.
 
 The donations page adjusts card sizes and loop duration to the logo count and
-screen width. Hover or focus pauses movement; the pause button also works on
-touchscreens. Reduced-motion preferences show a static, wrapping logo list.
+screen width. Hover pauses movement. Reduced-motion preferences show a static,
+wrapping logo list.
 The section stays hidden until at least one logo loads successfully.

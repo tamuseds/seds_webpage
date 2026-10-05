@@ -20,19 +20,6 @@
   font-size: clamp(1.3rem, 3vw, 2rem);
 }
 
-.sponsor-scroll__pause {
-  flex-shrink: 0;
-  padding: 8px 12px;
-  border: 1px solid var(--color-line);
-  border-radius: 6px;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-.sponsor-scroll__pause:focus-visible { outline: 2px solid white; outline-offset: 4px; }
 .sponsor-scroll__viewport { overflow: hidden; }
 .sponsor-scroll__track {
   display: flex;
@@ -58,13 +45,12 @@
   height: clamp(90px, 12vw, 140px);
   padding: 18px;
   border-radius: 10px;
-  background: white;
+  background: transparent;
 }
 
 .sponsor-scroll__logo img { width: 100%; height: 100%; object-fit: contain; }
 .sponsor-scroll:hover .sponsor-scroll__track,
-.sponsor-scroll:focus-within .sponsor-scroll__track,
-.sponsor-scroll.is-paused .sponsor-scroll__track { animation-play-state: paused; }
+.sponsor-scroll:focus-within .sponsor-scroll__track { animation-play-state: paused; }
 
 @keyframes sponsor-slide { to { transform: translateX(-50%); } }
 
@@ -72,12 +58,10 @@
 @media (max-width: 768px) {
   #sponsor-scroll-track { animation: sponsor-slide var(--sponsor-duration, 30s) linear infinite !important; }
   .sponsor-scroll:hover #sponsor-scroll-track,
-  .sponsor-scroll:focus-within #sponsor-scroll-track,
-  .sponsor-scroll.is-paused #sponsor-scroll-track { animation-play-state: paused !important; }
+  .sponsor-scroll:focus-within #sponsor-scroll-track { animation-play-state: paused !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sponsor-scroll__pause { display: none; }
   #sponsor-scroll-track { animation: none !important; width: 100%; }
   .sponsor-scroll__group { width: 100%; padding: 0 20px; flex-wrap: wrap; justify-content: center; }
   .sponsor-scroll__group[aria-hidden],

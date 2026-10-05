@@ -7,7 +7,6 @@
 
   const viewport = section.querySelector('.sponsor-scroll__viewport');
   const track = section.querySelector('.sponsor-scroll__track');
-  const pause = section.querySelector('.sponsor-scroll__pause');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   // Wait for valid images so broken or missing files never leave empty cards.
@@ -58,12 +57,6 @@
       // Travel at 45px/second regardless of the number of sponsors.
       section.style.setProperty('--sponsor-duration', group.getBoundingClientRect().width / 45 + 's');
     }
-
-    pause.addEventListener('click', () => {
-      const paused = section.classList.toggle('is-paused');
-      pause.setAttribute('aria-pressed', String(paused));
-      pause.textContent = paused ? 'Resume logos' : 'Pause logos';
-    });
 
     let previousWidth = 0;
     new ResizeObserver(() => {
