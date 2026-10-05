@@ -15,7 +15,8 @@
     img.alt = entry.name;
     img.onload = () => resolve(img);
     img.onerror = () => resolve(null);
-    img.src = '../images/sponsorlogos/' + encodeURIComponent(entry.file);
+    img.src = '../images/sponsorlogos/' + encodeURIComponent(entry.file)
+      + (entry.version ? '?v=' + encodeURIComponent(entry.version) : '');
   }))).then((images) => {
     const logos = images.filter(Boolean);
     if (!logos.length) return;

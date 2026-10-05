@@ -68,24 +68,17 @@ embedded on the Google Site (a form, a map, a newsletter signup, etc.).
 Replace the `<div class="footer__embed">…</div>` in `index.html` with the
 real embed code (an `<iframe>`, for example).
 
-## Cache-busting after CSS/JS edits
+## Deployment and asset caching
 
-Every page loads `css/style.css` and the `js/*.js` files with a `?v=4`
-query string. Browsers (and GitHub's CDN) cache these files aggressively,
-so without this, editing `style.css` and pushing won't show up for
-visitors — or even for you — until the cache happens to expire.
+GitHub Actions generates the sponsor logo list, assembles the site, and versions
+local scripts, styles, and images by their content before deploying to Pages.
+Changed assets receive new URLs automatically, including replaced sponsor images
+with the same filename. Missing JavaScript or CSS files stop the build before
+publication. Source HTML files keep their existing URLs for local previews.
 
-**After any CSS or JS change, bump the number** in every `?v=N` across
-all HTML files before committing. The fastest way:
-
-```bash
-# from the repo root, replace 4 with the new number everywhere
-grep -rl '?v=4"' --include="*.html" . | xargs sed -i 's/?v=4"/?v=5"/g'
-```
-
-If a page still looks stale after a push even with the version bumped,
-that's a genuine caching gap — try an incognito window or a hard refresh
-(Ctrl+Shift+R / Cmd+Shift+R) to confirm.
+Set the repository's Pages source to **GitHub Actions**. Push to `main` to deploy;
+check the **Generate sponsor logos and deploy Pages** workflow for build results.
+For local sponsor previews, run `node tools/update-sponsor-logos.mjs`.
 
 ## Previewing locally
 

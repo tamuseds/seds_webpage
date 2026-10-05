@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: '24'
 
+      - name: Check asset versioning
+        run: node --test tools/version-site-assets.test.mjs
+
       - name: Generate sponsor logo list
         run: node tools/update-sponsor-logos.mjs
 
@@ -32,6 +35,9 @@ jobs:
           mkdir _site
           cp *.html *.css CNAME .nojekyll _site/
           cp -R assets css images js pages _site/
+
+      - name: Version deployed scripts, styles, and images
+        run: node tools/version-site-assets.mjs _site
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
