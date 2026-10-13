@@ -54,6 +54,53 @@ html { scroll-padding-top: calc(var(--header-height, 64px) + 16px); }
 .scroll-motion-ready .reveal--right.scroll-reveal-managed { --reveal-x: 20px; }
 .scroll-motion-ready .reveal--fade.scroll-reveal-managed { --reveal-y: 12px; }
 .scroll-motion-ready .scroll-reveal-managed.is-visible { opacity: 1; translate: none; }
+/* Homepage entrances track native scrolling, without a wheel interceptor.
+   Keep the timed entrance above as the fallback for older browsers. */
+@supports (animation-timeline: view()) {
+  .home-page .home-scroll-linked {
+    animation: home-scroll-enter linear both !important;
+    animation-timeline: view() !important;
+    animation-range: entry 0% entry 100% !important;
+    transition: transform 200ms ease, box-shadow 200ms ease,
+                color 200ms ease, background-color 200ms ease !important;
+  }
+  .home-page .home-scroll-linked.scroll-reveal-focused {
+    animation: none !important;
+    opacity: 1;
+    translate: none;
+  }
+}
+@keyframes home-scroll-enter {
+  from { opacity: 0.2; translate: 0 16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* Blend the lettering against the actual backdrop, including photos.
+   White lettering becomes dark over light areas and light over dark areas. */
+.footer__embed.footer__signup {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
+  mix-blend-mode: difference;
+}
+.footer__signup .footer__signup-title { color: #ffffff; font-weight: 500; }
+.footer__signup :is(.footer__signup-intro, .footer__signup-msg) { color: #ffffff; }
+.footer__signup-form input {
+  min-width: 0;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+}
+.footer__signup-form input::placeholder { color: #ffffff; opacity: 1; }
+.footer__signup-form input:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+.footer__signup .footer__signup-submit {
+  background: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
 /* A brighter rail follows reading position, using the timeline's own gold. */
 .griffin-timeline__list.timeline-progress-ready::before { opacity: 0.35; }
 .griffin-timeline__list.timeline-progress-ready::after {
@@ -91,6 +138,7 @@ html { scroll-padding-top: calc(var(--header-height, 64px) + 16px); }
   .scroll-motion-ready :is(.reveal--left, .reveal--right).scroll-reveal-managed { --reveal-x: 0px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .home-page .home-scroll-linked { animation: none !important; opacity: 1; translate: none; }
   .scroll-motion-ready .scroll-reveal-managed { opacity: 1; translate: none; transition: none !important; }
   .griffin-timeline__list.timeline-progress-ready::before { opacity: 1; }
   .griffin-timeline__list.timeline-progress-ready::after { display: none; }

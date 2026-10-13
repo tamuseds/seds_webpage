@@ -3,6 +3,8 @@
   "use strict";
   function initScrollExperience() {
     var preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var isHome = document.body.classList.contains("home-page");
+    var scrollLinkedHome = isHome && window.CSS && CSS.supports("animation-timeline", "view()");
     var heroSelector = ".hero, .about-hero, .mission-hero, .join-hero, .solar-hero, .luna-hero, .snf-hero, .sac-hero, .portal-hero, .officers-hero, .donate-hero, .team-banner";
     var candidates = [
       ".reveal", "section > .container > h2", "section > h2", ".statement__text",
@@ -12,6 +14,7 @@
       ".sac-row__text", ".sac-row__media", ".luna-accomplish__text", ".luna-accomplish__media",
       ".board__grid > *", ".proj-cards__grid > *", ".officers-grid .officer-card",
       ".shop-grid > *", ".partners-static__grid > *", ".team-advisor__row",
+      ".home-page .home-accordion", ".home-page .advisor-photo-only__wrap",
       ".join-columns > .container > *", ".solar-gallery__grid > *",
       ".luna-gallery__grid > *", ".snf-gallery__grid > *"
     ].join(", ");
@@ -61,10 +64,11 @@
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+    }, { threshold: 0, rootMargin: isHome ? "0px 0px 64px 0px" : "0px 0px -24px 0px" });
     document.documentElement.classList.add("scroll-motion-ready");
     targets.forEach(function (el) {
       el.classList.add("scroll-reveal-managed");
+      if (scrollLinkedHome) el.classList.add("home-scroll-linked");
       var rect = el.getBoundingClientRect();
       // First-screen content is immediately available; only new content
       // enters on scrolling. A low threshold also handles very tall rows.
@@ -79,6 +83,7 @@
     document.addEventListener("focusin", function (event) {
       var target = event.target.closest(".scroll-reveal-managed");
       if (target) {
+        target.classList.add("scroll-reveal-focused");
         target.style.setProperty("--reveal-delay", "0ms");
         target.classList.add("is-visible");
         observer.unobserve(target);
