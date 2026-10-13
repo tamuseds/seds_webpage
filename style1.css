@@ -5324,7 +5324,9 @@ a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card)
    these effects either never trigger correctly or can get visually
    "stuck" after a tap. The scroll-triggered slide-in reveal effect
    (.reveal / .reveal--left / .reveal--right / .reveal--fade) is
-   kept, since it's still meaningful on mobile scrolling. The homepage hero
+   kept, since it's still meaningful on mobile scrolling. Elements enrolled
+   by scroll-reveal.js are exempt so their shared entrance transitions work
+   on touch devices too. The homepage hero
    letter reveal is also kept so its acronym transition remains visible.
 
    Note: this also removes the smoothing on functional UI transitions
@@ -5334,9 +5336,9 @@ a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card)
    ============================================================ */
 
 @media (max-width: 768px) {
-  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn),
-  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn)::before,
-  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn)::after {
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn):not(.scroll-reveal-managed),
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn):not(.scroll-reveal-managed)::before,
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn):not(.scroll-reveal-managed)::after {
     transition: none !important;
     animation: none !important;
   }
