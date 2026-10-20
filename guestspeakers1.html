@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Guest Event — SEDS Speaker Series — TAMU SEDS</title>
 <meta name="description" content="SEDS Speaker Series: Aim for the Moon with Gerry Griffin ’56 at Rudder Forum, 6–8 PM. RSVP now.">
-<link rel="stylesheet" href="../style1.css">
-<link rel="stylesheet" href="../guestspeakers1.css">
-<link rel="stylesheet" href="css/scroll-experience.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
+<link rel="stylesheet" href="../css/style1.css?v=109">
+<link rel="stylesheet" href="../css/guestspeakers1.css?v=8">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <noscript><style>.reveal{opacity:1!important;transform:none!important;} #intro-overlay{display:none!important;}</style></noscript>
 </head>
@@ -53,14 +53,39 @@
 
 <!-- ============ PAGE INTRO ============ -->
 <main>
-<!-- Hero band is the actual flyer graphic (lunar surface + the Class of
-     '56 ring), cropped down to just that top band — the title is baked
-     into the image exactly as designed, so the <h1> below is a visually
-     hidden (but screen-reader and SEO visible) duplicate, not a second
-     visible headline. -->
-<section class="mission-hero">
+<!-- Hero: black/white treatment (Anton display type) that flows straight
+     into the site's existing dark/starfield theme used by the sections
+     below — the whole page now reads as one continuous dark theme. -->
+<section class="griffin-hero">
+  <div class="container griffin-hero__rule-row">
+    <span class="griffin-hero__rule" aria-hidden="true"></span>
+    <span class="griffin-hero__badge">
+      <img src="../assets/logo.png" alt="" class="griffin-hero__badge-logo" onerror="this.style.display='none'">
+    </span>
+    <span class="griffin-hero__rule" aria-hidden="true"></span>
+  </div>
+
   <div class="container">
-    <h1 class="mission-hero__title sr-only">SEDS Speaker Series: Guest Event</h1>
+    <h1 class="griffin-hero__title">
+      Where Will Your<br>
+      Aggie Ring<br>
+      Take You?
+    </h1>
+
+    <div class="griffin-hero__grid">
+      <div class="griffin-hero__copy">
+        <span class="griffin-hero__divider" aria-hidden="true"></span>
+        <p class="griffin-hero__lede">Hear an inside story of NASA Flight Director <strong>Gerry Griffin</strong> in the age of Apollo and beyond</p>
+        <p class="griffin-hero__meta">
+          <span>Rudder Forum</span><span class="griffin-hero__meta-sep" aria-hidden="true">&middot;</span><span>October 29th</span><span class="griffin-hero__meta-sep" aria-hidden="true">&middot;</span><span>6&ndash;8 PM</span>
+        </p>
+        <a class="griffin-hero__rsvp" href="https://forms.gle/6XfZq5EqXHj5TzvE8" target="_blank" rel="noopener">RSVP Here</a>
+      </div>
+
+      <figure class="griffin-hero__figure">
+        <img src="../assets/griffin-portrait.jpg" alt="Gerry Griffin in his flight jacket, wearing his NASA mission patch">
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -69,7 +94,7 @@
   <div class="container">
     <div class="mission-row__text">
       <figure class="guest-event__figure">
-        <img class="guest-event__portrait" src="../images/guestspeakers/gerry_griffin_headshot.jpg" alt="Portrait of Gerry Griffin" width="490" height="624">
+        <img class="guest-event__portrait" src="../images/guestspeakers/GGriffinImage.jpeg" alt="Portrait of Gerry Griffin" width="490" height="624">
         <figcaption id="guest-event-caption" class="guest-event__caption">
           <span class="guest-event__name">Gerry Griffin ’56</span>
           <span class="guest-event__details">
@@ -84,7 +109,7 @@
       <p class="guest-event__rsvp">
         <a class="btn btn--accent" href="https://forms.gle/6XfZq5EqXHj5TzvE8" target="_blank" rel="noopener">RSVP Here</a>
       </p>
-      <h2 class="guest-event__talk-title">Aim for the Moon</h2>
+      <h2 class="guest-event__talk-title">Meet the Man Behind the Moon Ring</h2>
       <ul class="guest-event__highlights">
         <li>Flight Director for Apollo 7-17</li>
         <li>Had his Aggie Ring brought to the Moon and back</li>
@@ -160,7 +185,7 @@
       <li class="griffin-timeline__item griffin-timeline__item--featured reveal reveal--left">
         <span class="griffin-timeline__year">Nov 1969</span>
         <figure class="griffin-timeline__media griffin-timeline__media--featured">
-          <img src="assets/griffin-ring.jpg" alt="Gerry Griffin's Texas A&amp;M Class of 1956 ring" loading="lazy">
+          <img src="../assets/griffin-ring.jpg" alt="Gerry Griffin's Texas A&amp;M Class of 1956 ring" loading="lazy">
           <figcaption>The ring that rode to the Moon and back aboard Apollo 12.</figcaption>
         </figure>
         <div class="griffin-timeline__text">
@@ -196,7 +221,7 @@
       <li class="griffin-timeline__item griffin-timeline__item--featured reveal reveal--right">
         <span class="griffin-timeline__year">Today</span>
         <figure class="griffin-timeline__media griffin-timeline__media--featured">
-          <img src="assets/griffin-ring.jpg" alt="Gerry Griffin's Texas A&amp;M Class of 1956 ring, now on display" loading="lazy">
+          <img src="../assets/griffin-ring.jpg" alt="Gerry Griffin's Texas A&amp;M Class of 1956 ring, now on display" loading="lazy">
           <figcaption>On display at the Zachry Engineering Education Complex.</figcaption>
         </figure>
         <div class="griffin-timeline__text">
@@ -264,7 +289,7 @@
   var textEl = document.getElementById('intro-overlay-text');
   if (!overlay || !textEl) return;
 
-  var QUOTE = "That, to me, is the secret of Texas A&M: It prepares people to do what has never been done before. - Gerry Griffin '56";
+  var QUOTE = "I knew deep-down, right then that I was going into the space business.";
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function fadeOutOverlay() {

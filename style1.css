@@ -4387,25 +4387,12 @@ body.lightbox-locked { overflow: hidden; }
 /* ---- Guest Event (Gerry Griffin) ----
    This page doesn't use the shared, full-page fixed photo the other
    .mission-page pages use — its hero is the actual event flyer's top
-   band (lunar surface + the Class of '56 ring), cropped down to a
-   fixed-height banner at the top only, with solid black below (matching
-   the flyer itself). So: turn off the shared fixed backdrop, and put
-   this page's own image directly on .mission-hero instead. */
+   band (lunar surface + the Class of '56 ring). So: turn off the shared
+   fixed backdrop — the hero itself (the .griffin-hero rules, in
+   guestspeakers1.css) now carries its own cream background and the
+   dark sections below carry solid black. */
 .guest-speakers-page .bg-fixed {
   display: none;
-}
-.guest-speakers-page .mission-hero {
-  background: url('../assets/griffin-hero-band.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 0;
-  /* min-height is a fallback (matches the image's own ratio, ~29.97%
-     of the viewport width) for any browser that doesn't support
-     aspect-ratio; aspect-ratio itself is what actually sizes this in
-     every current browser. Without one or the other this section has
-     no content of its own and collapses to 0 height. */
-  min-height: 29.97vw;
-  aspect-ratio: 1545 / 463;
 }
 .guest-speakers-page .mission-row--dark,
 .guest-speakers-page .site-footer {
@@ -5324,9 +5311,7 @@ a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card)
    these effects either never trigger correctly or can get visually
    "stuck" after a tap. The scroll-triggered slide-in reveal effect
    (.reveal / .reveal--left / .reveal--right / .reveal--fade) is
-   kept, since it's still meaningful on mobile scrolling. Elements enrolled
-   by scroll-reveal.js are exempt so their shared entrance transitions work
-   on touch devices too. The homepage hero
+   kept, since it's still meaningful on mobile scrolling. The homepage hero
    letter reveal is also kept so its acronym transition remains visible.
 
    Note: this also removes the smoothing on functional UI transitions
@@ -5336,9 +5321,9 @@ a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card)
    ============================================================ */
 
 @media (max-width: 768px) {
-  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn):not(.scroll-reveal-managed),
-  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn):not(.scroll-reveal-managed)::before,
-  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn):not(.scroll-reveal-managed)::after {
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn),
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn)::before,
+  *:not(.hero__acronym-letter):not(.hero__letter):not(.hero__expanded):not(.hero__rest):not(.hero__join-btn)::after {
     transition: none !important;
     animation: none !important;
   }
@@ -5519,7 +5504,7 @@ body.intro-overlay-active {
   letter-spacing: 0.08em;
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
   margin: 0 0 72px;
-  color: #e8c77e;
+  color: #a3344c;
 }
 
 .griffin-timeline__list {
@@ -5539,7 +5524,7 @@ body.intro-overlay-active {
   bottom: 0;
   left: 28px;
   width: 2px;
-  background: linear-gradient(180deg, rgba(232,199,126,0) 0%, rgba(232,199,126,0.55) 8%, rgba(232,199,126,0.55) 92%, rgba(232,199,126,0) 100%);
+  background: linear-gradient(180deg, rgba(163,52,76,0) 0%, rgba(163,52,76,0.55) 8%, rgba(163,52,76,0.55) 92%, rgba(163,52,76,0) 100%);
 }
 
 .griffin-timeline__item {
@@ -5562,7 +5547,7 @@ body.intro-overlay-active {
   font-weight: 600;
   letter-spacing: 0.03em;
   font-size: 0.85rem;
-  color: #e8c77e;
+  color: #a3344c;
   white-space: nowrap;
 }
 .griffin-timeline__year::after {
@@ -5573,8 +5558,8 @@ body.intro-overlay-active {
   width: 11px;
   height: 11px;
   border-radius: 50%;
-  background: #e8c77e;
-  box-shadow: 0 0 0 4px #000000, 0 0 14px rgba(232,199,126,0.7);
+  background: #a3344c;
+  box-shadow: 0 0 0 4px #000000, 0 0 14px rgba(163,52,76,0.7);
 }
 
 .griffin-timeline__media {
@@ -5629,15 +5614,15 @@ body.intro-overlay-active {
 /* The two entries that carry the ring photo get a little extra
    visual weight — this is "the ring feature". */
 .griffin-timeline__item--featured .griffin-timeline__media {
-  border-color: rgba(232, 199, 126, 0.6);
-  box-shadow: 0 0 28px rgba(232, 199, 126, 0.18);
+  border-color: rgba(163, 52, 76, 0.6);
+  box-shadow: 0 0 28px rgba(163, 52, 76, 0.18);
 }
 .griffin-timeline__item--featured .griffin-timeline__year,
 .griffin-timeline__item--featured .griffin-timeline__year::after {
-  color: #f3d998;
+  color: #c9596d;
 }
 .griffin-timeline__item--featured .griffin-timeline__text h3 {
-  color: #e8c77e;
+  color: #a3344c;
 }
 
 /* Wider screens: alternate the media/text pair left/right of the
@@ -5664,7 +5649,7 @@ body.intro-overlay-active {
     text-align: center;
     padding: 4px 14px;
     background: #000000;
-    border: 1px solid rgba(232, 199, 126, 0.5);
+    border: 1px solid rgba(163, 52, 76, 0.5);
     border-radius: 999px;
     z-index: 1;
   }

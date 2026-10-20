@@ -84,6 +84,150 @@
   margin-top: 12px;
 }
 
+/* ---- Hero: black / white section ---- */
+/* Fonts: Anton (display) + Barlow Semi Condensed (body/labels), loaded
+   via the Google Fonts <link> in the page <head>. Self-contained — does
+   not depend on .mission-hero/.mission-hero__title, which the rest of
+   the site still uses for its image-only hero bands. Black bg + white
+   text so the hero now flows straight into the dark/starfield sections
+   below with no seam; maroon is kept as the one accent color. */
+.guest-speakers-page .griffin-hero {
+  --griffin-maroon: #5c1220;
+  background: #000000;
+  color: #ffffff;
+  padding: 56px 8vw 72px;
+  overflow: hidden;
+}
+
+.guest-speakers-page .griffin-hero__rule-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.guest-speakers-page .griffin-hero__rule {
+  flex: 1;
+  height: 2px;
+  background: #ffffff;
+}
+
+.guest-speakers-page .griffin-hero__badge {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.guest-speakers-page .griffin-hero__badge-logo {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.guest-speakers-page .griffin-hero__title {
+  font-family: 'Anton', 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-align: center;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  margin: 0 auto;
+  max-width: 1100px;
+  font-size: clamp(44px, 7.4vw, 104px);
+  text-transform: uppercase;
+}
+
+.guest-speakers-page .griffin-hero__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 48px auto 0;
+}
+
+.guest-speakers-page .griffin-hero__divider {
+  display: block;
+  height: 2px;
+  width: 120px;
+  background: var(--griffin-maroon);
+  margin-bottom: 24px;
+}
+
+.guest-speakers-page .griffin-hero__lede {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2.3vw, 28px);
+  line-height: 1.35;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.guest-speakers-page .griffin-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin: 0 0 30px;
+}
+
+.guest-speakers-page .griffin-hero__meta-sep {
+  opacity: 0.7;
+}
+
+.guest-speakers-page .griffin-hero__rsvp {
+  display: inline-block;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 16px 36px;
+  border-radius: 2px;
+  border: 2px solid #ffffff;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.guest-speakers-page .griffin-hero__rsvp:hover {
+  background: var(--griffin-maroon);
+  color: #ffffff;
+  border-color: var(--griffin-maroon);
+}
+
+.guest-speakers-page .griffin-hero__figure {
+  margin: 0;
+  position: relative;
+}
+
+.guest-speakers-page .griffin-hero__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 40px rgba(92, 18, 32, 0.35), 0 24px 48px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 760px) {
+  .guest-speakers-page .griffin-hero__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---- Drifting starfield behind the dark sections ---- */
 /* Pure CSS — two tiled layers of small white radial-gradient dots, each
    layer slowly panning on its own loop and softly twinkling via opacity.
