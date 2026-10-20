@@ -5533,7 +5533,7 @@ a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card)
 }
 
 .griffin-timeline__text h3 {
-  margin: 0 15px 10px;
+  margin: 0 20px 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 1.2rem;
@@ -5542,7 +5542,7 @@ a:not(.btn):not(.social):not(.partner-flip):not(.partner-static):not(.proj-card)
 }
 
 .griffin-timeline__text p {
-  margin: 0 15px 0px;
+  margin: 0 20px 0px;
   font-weight: 300;
   line-height: 1.75;
   color: rgba(245, 245, 245, 0.85);
