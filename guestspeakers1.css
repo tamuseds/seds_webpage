@@ -84,6 +84,24 @@
   margin-top: 12px;
 }
 
+/* ---- Header: SEDS logo + Aerospace Engineering dept banner ---- */
+/* Sized to match .site-logo's 34px height (see style.css) so the two
+   marks read as the same scale side by side; the banner just keeps its
+   own (wider) aspect ratio instead of being forced square. */
+.guest-speakers-page .site-dept-banner {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+@media (max-width: 560px) {
+  .guest-speakers-page .site-dept-banner {
+    display: none;
+  }
+}
+
 /* ---- Hero: black / white section ---- */
 /* Fonts: Anton (display) + Barlow Semi Condensed (body/labels), loaded
    via the Google Fonts <link> in the page <head>. Self-contained — does

@@ -6,24 +6,12 @@
 <title>Guest Event — SEDS Speaker Series — TAMU SEDS</title>
 <meta name="description" content="SEDS Speaker Series: Aim for the Moon with Gerry Griffin ’56 at Rudder Forum, 6–8 PM. RSVP now.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Semi+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap">
-<link rel="stylesheet" href="../css/style1.css?v=109">
-<link rel="stylesheet" href="../css/guestspeakers1.css?v=8">
+<link rel="stylesheet" href="/Users/anshpatel/Downloads/style1.css">
+<link rel="stylesheet" href="/Users/anshpatel/Downloads/guestspeakers1.css">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
-<noscript><style>.reveal{opacity:1!important;transform:none!important;} #intro-overlay{display:none!important;}</style></noscript>
+<noscript><style>.reveal{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body class="mission-page guest-speakers-page">
-
-<!-- ============ OPENING TYPEWRITER INTRO ============ -->
-<!-- White screen, black typewriter-style quote, then fades to reveal the
-     page underneath. Pure CSS/JS, no dependency on anything else on the
-     page. Respects prefers-reduced-motion (skips the type-out, shows the
-     line, fades quickly) and fails safe with JS off (noscript rule above
-     hides it outright) or if anything throws (removed on a timeout). -->
-<div id="intro-overlay" class="intro-overlay" role="presentation" aria-hidden="true">
-  <p class="intro-overlay__quote">
-    <span id="intro-overlay-text" class="intro-overlay__text"></span><span class="intro-overlay__cursor" aria-hidden="true"></span>
-  </p>
-</div>
 
 <div class="bg-fixed">
   <div class="bg-fixed__overlay"></div>
@@ -36,7 +24,8 @@
     <span class="nav-toggle__bar"></span>
     <span class="nav-toggle__bar"></span>
   </button>
-  <img class="site-logo" src="../assets/logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <img class="site-logo" src="../assets/seds-tamu-logo.png" alt="TAMU SEDS logo" onerror="this.style.visibility='hidden'">
+  <img class="site-dept-banner" src="../assets/aero-dept-banner.png" alt="Texas A&amp;M University Department of Aerospace Engineering" onerror="this.style.display='none'">
   <span class="site-title">TAMU SEDS</span>
 </header>
 
@@ -60,7 +49,7 @@
   <div class="container griffin-hero__rule-row">
     <span class="griffin-hero__rule" aria-hidden="true"></span>
     <span class="griffin-hero__badge">
-      <img src="../assets/logo.png" alt="" class="griffin-hero__badge-logo" onerror="this.style.display='none'">
+      <img src="../assets/seds-tamu-logo.png" alt="" class="griffin-hero__badge-logo" onerror="this.style.display='none'">
     </span>
     <span class="griffin-hero__rule" aria-hidden="true"></span>
   </div>
@@ -276,66 +265,6 @@
     <p class="footer__bottom">&copy; <span id="year"></span> TAMU SEDS. All rights reserved.</p>
   </div>
 </footer>
-
-<script>
-(function () {
-  // ---- Opening typewriter intro ----
-  // White screen -> black typewriter-style quote -> fades out to reveal
-  // the page. Runs once per page load (not stored/skipped on repeat
-  // visits — it's short and this is a one-off event page, not something
-  // a returning visitor needs to sit through on every single load of
-  // the whole site).
-  var overlay = document.getElementById('intro-overlay');
-  var textEl = document.getElementById('intro-overlay-text');
-  if (!overlay || !textEl) return;
-
-  var QUOTE = "I knew deep-down, right then that I was going into the space business.";
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function fadeOutOverlay() {
-    overlay.classList.add('intro-overlay--hidden');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('intro-overlay-active');
-    // Fully detach after the CSS fade finishes so it can't catch clicks.
-    window.setTimeout(function () {
-      if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
-    }, 1000);
-  }
-
-  // Safety net: whatever happens, never leave the visitor stuck looking
-  // at a blank white screen.
-  var safety = window.setTimeout(fadeOutOverlay, 6000);
-
-  if (reduceMotion) {
-    textEl.textContent = QUOTE;
-    window.setTimeout(function () {
-      window.clearTimeout(safety);
-      fadeOutOverlay();
-    }, 700);
-    return;
-  }
-
-  document.body.classList.add('intro-overlay-active');
-
-  var i = 0;
-  var typeSpeed = 38; // ms per character
-
-  function typeNext() {
-    if (i <= QUOTE.length) {
-      textEl.textContent = QUOTE.slice(0, i);
-      i++;
-      window.setTimeout(typeNext, typeSpeed);
-    } else {
-      window.setTimeout(function () {
-        window.clearTimeout(safety);
-        fadeOutOverlay();
-      }, 900);
-    }
-  }
-
-  window.setTimeout(typeNext, 250);
-})();
-</script>
 
 <script>
 (function () {
