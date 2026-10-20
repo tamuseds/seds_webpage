@@ -33,7 +33,6 @@ jobs:
       - name: Collect website files
         run: |
           mkdir _site
-          shopt -s nullglob
           cp *.html *.css CNAME .nojekyll _site/
           cp -R assets css images js pages _site/
 
